@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Grandis Extended 400';
+    src: url('../assets/fonts/MonumentExtended-Regular.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Bold-Font';
+    src: url('../assets/fonts/MonumentExtended-Ultrabold.otf');
+    font-weight: 500;
+}
+
+body {
+    background-color: #F5F9FC;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Grandis Extended 400';
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1640px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1640px) {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+.section-target-container {
+    background-image: url("../assets/section_target/section_target.jpg");
+    background-repeat: no-repeat;
+    // background-position: center;
+    height: 882px;
+    width: 100%;
+    margin-top: 65px;
+}
+
+.section-target {
+    max-width: 1640px;
+    margin: 0 auto;
+    height: 85%;
+
+    @media screen and (max-width: 1640px) {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
