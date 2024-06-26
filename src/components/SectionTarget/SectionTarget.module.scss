@@ -14,3 +14,31 @@
     font-size: 18px !important;
     color: #fff !important;
 }
+
+@media screen and (max-width: 670px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .paragrapgh {
+        font-size: 20px;
+    }
+
+    .btn {
+        border-radius: 30px !important;
+        height: 35px !important;
+        width: auto !important;
+    }
+
+    .text_container {
+        max-width: 350px !important;
+    }
+
+    .main_flex {
+        height: initial !important;
+    }
+
+    .cardAge_conatiner {
+        margin-top: 25px !important;
+    }
+}

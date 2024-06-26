@@ -6,11 +6,11 @@ import CardAge from '../CardAge/CardAge'
 
 function SectionTarget() {
     return (
-        <Flex style={{ flexDirection: 'column', height: '100%' }} justify={'space-between'} >
-            <Flex style={{ marginTop: 59 }} justify={'end'}>
+        <Flex className={styles.main_flex} style={{ flexDirection: 'column', height: '100%' }} justify={'space-between'} >
+            <Flex className={styles.cardAge_conatiner} style={{ marginTop: 59 }} justify={'end'}>
                 <CardAge age={8} text='Years in UAE' />
             </Flex>
-            <Flex style={{ flexDirection: 'column', maxWidth: 640 }} gap={36}>
+            <Flex className={styles.text_container} style={{ flexDirection: 'column', maxWidth: 640 }} gap={36}>
                 <div>
                     <h2 className={styles.title}>RELIABLE CLEANLINESSIS OUR MISSION!</h2>
                 </div>

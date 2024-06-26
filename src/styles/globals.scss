@@ -1,14 +1,28 @@
 @font-face {
-    font-family: 'Grandis Extended 400';
-    src: url('../assets/fonts/MonumentExtended-Regular.otf');
-    font-weight: 400;
+    font-family: 'Monument-Regular';
+    src: url('../assets/fonts/Monument/MonumentExtended-Regular.otf');
 }
 
 @font-face {
-    font-family: 'Bold-Font';
-    src: url('../assets/fonts/MonumentExtended-Ultrabold.otf');
-    font-weight: 500;
+    font-family: 'Monument-Ultra';
+    src: url('../assets/fonts/Monument/MonumentExtended-Ultrabold.otf');
 }
+
+@font-face {
+    font-family: 'Grandis-Regular';
+    src: url('../assets/fonts/Grandis/GrandisExtended-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Grandis-Bold';
+    src: url('../assets/fonts/Grandis/GrandisExtended-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Grandis-Light';
+    src: url('../assets/fonts/Grandis/GrandisExtended-Light.ttf');
+}
+
 
 body {
     background-color: #F5F9FC;
@@ -19,7 +33,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Grandis Extended 400';
+    font-family: 'Grandis-Regular';
+}
+
+h2 {
+    font-family: "Monument-Regular";
 }
 
 li {
@@ -43,10 +61,15 @@ a {
 .section-target-container {
     background-image: url("../assets/section_target/section_target.jpg");
     background-repeat: no-repeat;
-    // background-position: center;
-    height: 882px;
+    background-position: center;
+    height: 820px;
     width: 100%;
     margin-top: 65px;
+
+    @media screen and (max-width: 670px) {
+        background-position: left;
+        height: 413px;
+    }
 }
 
 .section-target {
@@ -54,8 +77,37 @@ a {
     margin: 0 auto;
     height: 85%;
 
+
+
     @media screen and (max-width: 1640px) {
         max-width: 95%;
         margin: 0 auto;
     }
+}
+
+// CloseIconInDrawer
+:where(.css-dev-only-do-not-override-m4timi).ant-drawer .ant-drawer-content {
+    font-size: 29px !important;
+}
+
+//BoxShadowForDrawer
+:where(.css-dev-only-do-not-override-m4timi).ant-drawer-left>.ant-drawer-content-wrapper {
+    box-shadow: none !important;
+}
+
+//BoxShadowForDrawer
+:where(.css-dev-only-do-not-override-m4timi).ant-drawer-right>.ant-drawer-content-wrapper {
+    box-shadow: none !important;
+}
+
+//InputInNavbar
+:where(.css-dev-only-do-not-override-m4timi).ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector {
+    border: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+}
+
+//InputBoxShadowOutline
+.ant-select-focused:where(.css-dev-only-do-not-override-m4timi).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+    box-shadow: none !important;
 }

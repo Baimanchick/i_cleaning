@@ -1,0 +1,16 @@
+.navigation_item {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+        color: #4787F7;
+    }
+}
+
+.customDrawer {
+    background-color: #2F2F2F !important;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}

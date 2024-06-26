@@ -1,0 +1,21 @@
+.input {
+    width: 478px !important;
+    height: 55px !important;
+    box-sizing: border-box !important;
+    border-radius: 100px !important;
+    border: none !important;
+    color: #2F2F2F80 !important;
+    font-size: 19px !important;
+    background-color: #F5F9FC !important;
+    background-image: url('../../assets/svgs/navbar/search.svg') !important;
+    background-position: 8px 16px !important;
+    background-repeat: no-repeat !important;
+    padding: 12px 20px 12px 40px !important;
+    box-shadow: 0px 0px 10px 0px #00000033 !important;
+    outline: none !important;
+    font-family: sans-serif !important;
+
+    @media screen and (max-width: 820px) {
+        width: 100% !important;
+    }
+}
