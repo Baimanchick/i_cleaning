@@ -1,0 +1,103 @@
+.service_card {
+    @media screen and (max-width: 670px) {
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin: 0px 4px 0px 4px;
+    }
+
+}
+
+.image_item {
+    background-position: center;
+    background-size: cover;
+    width: 405px;
+    height: 220px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    @media screen and (max-width: 1200px) {
+        width: 305px;
+        height: 180px;
+    }
+
+    @media screen and (max-width: 945px) {
+        width: 205px;
+        height: 120px;
+    }
+
+    @media screen and (max-width: 670px) {
+        width: 194px;
+        height: 105px;
+    }
+}
+
+.radius {
+    border-top-left-radius: initial;
+    border-bottom-left-radius: initial;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.image_item_title {
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5),
+        0px 3px 0px rgba(0, 0, 0, 0.5),
+        0px 6px 0px #00000055;
+
+    @media screen and (max-width: 945px) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: 670px) {
+        font-size: 15px;
+    }
+}
+
+.text_button {
+    flex-direction: column;
+    width: 40%;
+
+    @media screen and (max-width: 670px) {
+        width: initial;
+        gap: 10px !important;
+    }
+}
+
+.paragraph {
+    color: rgba(101, 101, 101, 1);
+    font-size: 18px;
+
+    @media screen and (max-width: 1050px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 945px) {
+        font-size: 10px;
+    }
+}
+
+.btn {
+    width: 167px !important;
+    height: 50px !important;
+    border-radius: 50px !important;
+
+    &:hover {
+        border: 1px solid #000 !important;
+    }
+
+    @media screen and (max-width: 1050px) {
+        width: 135px !important;
+        height: 40px !important;
+    }
+
+    @media screen and (max-width: 945px) {
+        width: 115px !important;
+        height: 25px !important;
+        font-size: 10px !important;
+    }
+}

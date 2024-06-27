@@ -2,6 +2,7 @@ import styles from "@/styles/page.module.scss";
 import '@/styles/globals.scss'
 import Navbar from "@/components/Navbar/Navbar";
 import SectionTarget from "@/components/SectionTarget/SectionTarget";
+import Service from "@/components/Service/Service";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
         <div className="section-target">
           <SectionTarget />
         </div>
+      </div>
+      <div className="container">
+        <Service />
       </div>
     </main>
   );

@@ -68,7 +68,7 @@ a {
 
     @media screen and (max-width: 670px) {
         background-position: left;
-        height: 413px;
+        height: 375px;
     }
 }
 
@@ -110,4 +110,23 @@ a {
 //InputBoxShadowOutline
 .ant-select-focused:where(.css-dev-only-do-not-override-m4timi).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
     box-shadow: none !important;
+}
+
+//DotsInCarouselServices
+:where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-dots-bottom {
+    bottom: -22px !important;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-dots li {
+    background: rgba(179, 179, 179, 1) !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 16px !important;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-dots li.slick-active button {
+    background: black !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 16px !important;
 }

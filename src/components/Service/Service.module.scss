@@ -1,0 +1,31 @@
+.service_title {
+    font-weight: 400;
+    font-size: 48px;
+    color: '#2F2F2F';
+    margin: 149px 0px 60px 0px;
+
+    @media screen and (max-width: 670px) {
+        font-size: 20px;
+        margin: 10px 0px 10px 0px;
+    }
+}
+
+.service_list {
+    flex-direction: column !important;
+    width: 100% !important;
+    row-gap: 35px;
+}
+
+.service_list_mobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 670px) {
+    .service_list_mobile {
+        display: initial !important;
+    }
+
+    .service_list {
+        display: none !important;
+    }
+}

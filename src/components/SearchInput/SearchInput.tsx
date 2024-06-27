@@ -23,7 +23,7 @@ function SearchInput() {
                 style={{ width: 200 }}
                 onSelect={onSelect}
                 onSearch={(text) => setOptions(getPanelValue(text))}
-                placeholder="input here"
+                placeholder="Search"
                 className={styles.input}
             />
         </>
