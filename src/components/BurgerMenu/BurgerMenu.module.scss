@@ -13,4 +13,8 @@
     background-color: #2F2F2F !important;
     border-top-left-radius: 20px !important;
     border-bottom-left-radius: 20px !important;
+
+    @media screen and (max-width: 670px) {
+        border-radius: 0px !important;
+    }
 }

@@ -7,6 +7,12 @@
 
 }
 
+.image_main {
+    @media screen and (max-width: 670px) {
+        justify-content: center !important;
+    }
+}
+
 .image_item {
     background-position: center;
     background-size: cover;
@@ -35,6 +41,40 @@
     }
 }
 
+.singleImageContainer {
+    width: 100% !important;
+}
+
+.singleImage {
+    width: 812px;
+    border-radius: 5px;
+
+    @media (max-width: 1200px) {
+
+        width: 100%;
+        max-width: 812px;
+
+    }
+
+    @media (max-width: 768px) {
+
+        width: 100%;
+        max-width: 600px;
+
+    }
+
+    @media (max-width: 670px) {
+        margin-right: 5px;
+    }
+
+    @media (max-width: 576px) {
+
+        width: 100%;
+        max-width: 400px;
+
+    }
+}
+
 .radius {
     border-top-left-radius: initial;
     border-bottom-left-radius: initial;
@@ -48,6 +88,7 @@
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5),
         0px 3px 0px rgba(0, 0, 0, 0.5),
         0px 6px 0px #00000055;
+    text-align: center;
 
     @media screen and (max-width: 945px) {
         font-size: 16px;

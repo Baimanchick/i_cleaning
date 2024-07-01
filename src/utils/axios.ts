@@ -4,7 +4,7 @@ import axios, {
   AxiosResponse,
   AxiosRequestHeaders,
 } from "axios";
-import { API_URL } from "./consts";
+import { API_URL } from "./const";
 
 export interface Tokens {
   access: string;

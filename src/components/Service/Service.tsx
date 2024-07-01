@@ -1,29 +1,41 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect } from 'react'
 import styles from "./Service.module.scss"
 import { Flex } from 'antd'
 import ServiceCard from '../ServiceCard/ServiceCard'
 import SliderService from '../SliderService/SliderService'
+import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
+import { fetchService } from '@/store/features/service/serviceSlice'
+import { ServiceType } from '@/helpers/interfaces/service.interface'
+import Loading from '../Loading/Loading'
 
 function Service() {
-    const fakeData = [
-        {
-            id: 1,
-            title_1: 'CARPET',
-            title_2: 'CARPETING',
-            text: 'Regular carpet cleaning is essential for maintaining a healthy and comfortable home environment. It removes dirt, allergens, and bacteria, improving indoor air quality and extending the life of your carpets'
-        }
-    ]
+    const dispatch = useAppDispatch()
+    const { service, loading } = useAppSelector((state) => state.service)
+
+    useEffect(() => {
+        dispatch(fetchService())
+    }, [dispatch])
+
     return (
         <>
             <h2 className={styles.service_title}>CLEANING SERVICES</h2>
-            <Flex className={styles.service_list}>
-                {fakeData.map((service: any, index: number) => (
-                    <ServiceCard service={service} key={index} />
-                ))}
-            </Flex>
-            <Flex className={styles.service_list_mobile}>
-                <SliderService data={fakeData} />
-            </Flex>
+            {loading ? (
+                <Loading style={{ marginBottom: 40 }} />
+            ) : (
+                <>
+                    <Flex className={styles.service_list}>
+                        {service && service.map((item: ServiceType, index: number) => (
+                            <ServiceCard service={item} key={index} />
+                        ))}
+                    </Flex>
+                    <Flex className={styles.service_list_mobile}>
+                        <SliderService service={service} />
+                    </Flex>
+
+                </>
+            )}
         </>
     )
 }

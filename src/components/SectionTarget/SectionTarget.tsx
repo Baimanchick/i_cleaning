@@ -12,7 +12,7 @@ function SectionTarget() {
             </Flex>
             <Flex className={styles.text_container} style={{ flexDirection: 'column', maxWidth: 640 }} gap={36}>
                 <div>
-                    <h2 className={styles.title}>RELIABLE CLEANLINESSIS OUR MISSION!</h2>
+                    <h2 className={styles.title}>RELIABLE CLEANLINESS IS OUR MISSION!</h2>
                 </div>
                 <div>
                     <p className={styles.paragrapgh}>YOUR HOME IS OUR RESPONSIBILITY - TRUST US WITH ITS CARE.</p>

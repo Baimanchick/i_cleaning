@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import { AutoComplete } from 'antd';
 import styles from "./SearchInput.module.scss"

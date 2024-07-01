@@ -25,7 +25,8 @@
 
 
 body {
-    background-color: #F5F9FC;
+    // background-color: #F5F9FC;
+    background-color: rgba(245, 249, 252, 1);
     overflow-x: hidden;
 }
 
@@ -38,6 +39,11 @@ body {
 
 h2 {
     font-family: "Monument-Regular";
+}
+
+p {
+    font-family: 'Grandis-Light';
+
 }
 
 li {
@@ -58,8 +64,20 @@ a {
     }
 }
 
+.search-container {
+    display: none;
+
+    @media screen and (max-width: 670px) {
+        display: flex;
+        justify-content: center;
+        max-width: 95%;
+        margin: 0 auto;
+
+    }
+}
+
 .section-target-container {
-    background-image: url("../assets/section_target/section_target.jpg");
+    background-image: url("https://i.imgur.com/sn93qCR.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 820px;
@@ -69,6 +87,7 @@ a {
     @media screen and (max-width: 670px) {
         background-position: left;
         height: 375px;
+        margin-top: 10px;
     }
 }
 
