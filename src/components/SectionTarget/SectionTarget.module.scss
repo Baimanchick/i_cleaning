@@ -15,6 +15,20 @@
     color: #fff !important;
 }
 
+.ageImg {
+    @media screen and (max-width: 670px) {
+        display: none;
+    }
+}
+
+.ageImgSmall {
+    display: none;
+
+    @media screen and (max-width: 670px) {
+        display: initial;
+    }
+}
+
 @media screen and (max-width: 670px) {
     .title {
         font-size: 30px;

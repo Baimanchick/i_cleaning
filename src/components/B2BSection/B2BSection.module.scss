@@ -1,0 +1,160 @@
+.image_1 {
+    width: 100%;
+}
+
+.image_2 {
+    width: 80%;
+}
+
+.image_3 {
+    width: 60%;
+}
+
+.image_4 {
+    width: 80%;
+}
+
+.image_5 {
+    width: 60%;
+}
+
+.image {
+    object-fit: cover;
+    height: 100%;
+}
+
+.image_main {
+    justify-content: space-between;
+    display: flex;
+}
+
+.image_container_second {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 48px;
+}
+
+
+.tabs_main {
+    margin-bottom: 46px;
+
+    //UnderLine
+    div>div:first-child::before {
+        display: none !important;
+    }
+
+
+    div>div:first-child>div>div>div:last-child {
+        background: transparent !important;
+    }
+}
+
+.btn {
+    height: 65px !important;
+    width: 213px !important;
+    font-size: 18px !important;
+    color: #fff !important;
+}
+
+.secons_title {
+    color: rgba(101, 101, 101, 1);
+    font-size: 32px;
+}
+
+.text {
+    font-size: 18px;
+    color: rgba(101, 101, 101, 1);
+}
+
+.utils {
+    margin-top: 20px;
+}
+
+
+@media (max-width:1850px) {
+    .image_1 {
+        width: 98%;
+    }
+}
+
+@media (max-width: 1486px) {
+    .image_2 {
+        width: 60%;
+    }
+
+    .image_3 {
+        width: 45%;
+    }
+
+    .image_4 {
+        width: 60%;
+    }
+
+    .image_5 {
+        width: 45%;
+    }
+}
+
+@media (max-width:670px) {
+    .image_1 {
+        display: none;
+    }
+
+    .image {
+        height: 100%;
+    }
+
+    .image_2 {
+        width: 190px;
+    }
+
+    .image_3 {
+        width: 153px;
+    }
+
+    .image_4 {
+        width: 153px;
+    }
+
+    .image_5 {
+        width: 190px;
+    }
+
+    .image_main {
+        justify-content: center !important;
+    }
+
+    .secons_title {
+        font-size: 20px;
+    }
+
+    .main_title_container {
+        justify-content: flex-start !important;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    .contact {
+        font-size: 12px;
+    }
+
+    .btn {
+        border-radius: 30px !important;
+        height: 35px !important;
+        width: auto !important;
+    }
+
+    .tab_container {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}

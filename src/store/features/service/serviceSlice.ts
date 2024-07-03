@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { Service } from "@/helpers/interfaces/service.interface";
+import { ServiceType } from "@/helpers/interfaces/service.interface";
 import { API_URL } from "@/utils/const";
 import $axios from "@/utils/axios";
 
 export interface ServiceState {
-  service: Service[];
+  service: ServiceType[];
   loading: boolean;
 }
 

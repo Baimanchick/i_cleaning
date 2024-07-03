@@ -1,14 +1,16 @@
+import React from "react";
+import { Tabs } from "antd";
 import styles from "@/styles/page.module.scss";
 import '@/styles/globals.scss'
 import Navbar from "@/components/Navbar/Navbar";
 import SectionTarget from "@/components/SectionTarget/SectionTarget";
 import Service from "@/components/Service/Service";
 import SearchInput from "@/components/SearchInput/SearchInput";
-import B2BSection from "@/components/B2BSection/B2BSection";
 import SectionInfo from "@/components/SectionInfo/SectionInfo";
-import { Tabs } from "antd";
+import B2BSection from "@/components/B2BSection/B2BSection";
 
 export default function Home() {
+
   return (
     <main className={styles.main}>
       <div className="container">
@@ -25,7 +27,6 @@ export default function Home() {
       <div className="container">
         <Service />
       </div>
-
       <SectionInfo
         title="HANDMADE CARPETS DELICATE CLEANING"
         text="Silk carpets could be easily damaged by washing machine so it should be cleaned by special delicated hand or chemical cleaning. "
@@ -33,18 +34,12 @@ export default function Home() {
         imageUrl="https://i.imgur.com/x3QRtc0.jpeg"
         style={{ height: 430, marginTop: 149 }}
       />
-      {/* 
-      <Tabs defaultActiveKey="tab1">
-        <Tabs.TabPane tab='tab1'>
-          <div>tab1</div>
-        </Tabs.TabPane>
-        <Tabs.TabPane tab='tab2'>
-          <div>tab2</div>
-        </Tabs.TabPane>
-      </Tabs> */}
+
+      <div className={styles.b2b_section}>
+        <B2BSection />
+      </div>
 
 
-      {/* <B2BSection /> */}
     </main>
   );
 }

@@ -1,7 +1,7 @@
 .sectionInfo {
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
+    background-size: cover;
     position: relative;
 
     @media (max-width:670px) {
@@ -24,7 +24,6 @@
 
 .titleContainer {
     flex-direction: column !important;
-    position: relative !important;
     z-index: 2 !important;
 }
 
