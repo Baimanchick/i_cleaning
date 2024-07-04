@@ -18,7 +18,7 @@ export function Button({
       })}
     >
       <Flex gap={"small"} align={"center"}>
-        {children} {icon != "none" && icon}
+        {icon != "none" && icon} {children}
       </Flex>
     </ButtonAntd>
   );

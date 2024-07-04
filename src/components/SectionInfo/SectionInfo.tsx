@@ -10,8 +10,8 @@ function SectionInfo({ title, text, buttonTitle, imageUrl, style }: SectionInfoP
                 <Flex gap={5} className={styles.titleContainer} >
                     <h2 className={styles.title}>{title}</h2>
                     <p className={styles.text}>{text}</p>
-                    <div>
-                        <Button style={{ display: `${buttonTitle === '' ? 'none' : 'initial'}` }} className={styles.btn} appearance="blue">{buttonTitle}</Button>
+                    <div style={{ display: `${!buttonTitle ? 'none' : 'initial'}` }}>
+                        <Button className={styles.btn} appearance="blue">{buttonTitle}</Button>
                     </div>
                 </Flex>
             </Flex>

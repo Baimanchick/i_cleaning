@@ -9,3 +9,29 @@
         margin-top: 10px;
     }
 }
+
+.form_main {
+    margin-top: 80px;
+    background-image: url("https://i.imgur.com/oC1Ugyn.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+
+    @media (max-width:670px) {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+
+.form_container {
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 80px 0px 80px 0px;
+
+    @media screen and (max-width: 1640px) {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 10px 0px 10px 0px;
+    }
+}

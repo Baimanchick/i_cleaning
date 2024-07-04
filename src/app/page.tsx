@@ -1,5 +1,4 @@
 import React from "react";
-import { Tabs } from "antd";
 import styles from "@/styles/page.module.scss";
 import '@/styles/globals.scss'
 import Navbar from "@/components/Navbar/Navbar";
@@ -8,6 +7,7 @@ import Service from "@/components/Service/Service";
 import SearchInput from "@/components/SearchInput/SearchInput";
 import SectionInfo from "@/components/SectionInfo/SectionInfo";
 import B2BSection from "@/components/B2BSection/B2BSection";
+import FormEmail from "@/components/FormEmail/FormEmail";
 
 export default function Home() {
 
@@ -38,6 +38,20 @@ export default function Home() {
       <div className={styles.b2b_section}>
         <B2BSection />
       </div>
+
+      <div className={styles.form_main}>
+        <div className={styles.form_container}>
+          <FormEmail />
+        </div>
+      </div>
+
+      <SectionInfo
+        title="REGULAR VACUUMING IS NOT ENOUGH"
+        text="The average indoor carpet holds 200,000 bacteria per square inch. While regular vacuuming is essential, it’s not enough to keep your carpets truly clean. A clean carpet protects your health by improving air quality. It also improves the look and feel of a space."
+        buttonTitle={false}
+        imageUrl="https://i.imgur.com/n9NNDIt.jpeg"
+        style={{ height: 430, marginTop: 149 }}
+      />
 
 
     </main>
