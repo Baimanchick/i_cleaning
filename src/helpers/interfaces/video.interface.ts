@@ -1,5 +1,6 @@
 export interface VideoType {
-  id?: number;
-  videos: any;
+  id?: number | undefined;
+  videos: any[];
   title: string;
+  link: string;
 }

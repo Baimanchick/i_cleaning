@@ -14,6 +14,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
       <StoreProvider>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </StoreProvider>
+      <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
     </body>
   </html>
 );

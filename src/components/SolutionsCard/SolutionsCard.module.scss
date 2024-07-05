@@ -1,0 +1,61 @@
+.mainCard {
+    width: 389px;
+    height: 544px;
+    background-color: rgba(69, 144, 221, 1);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.title {
+    font-size: 24px;
+    color: #fff;
+    text-align: center
+}
+
+.paragraph {
+    font-size: 18px;
+    color: #fff;
+}
+
+.knowMoreButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    font-family: "Monument-Regular";
+    margin-top: 20px;
+}
+
+@media (max-width: 670px) {
+    .mainCard {
+        width: 300px;
+        height: auto;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .paragraph {
+        font-size: 12px;
+    }
+
+    .knowMoreButton {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 960px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .paragraph {
+        font-size: 15px;
+    }
+
+    .knowMoreButton {
+        font-size: 15px;
+    }
+}

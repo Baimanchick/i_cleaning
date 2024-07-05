@@ -35,3 +35,19 @@
         padding: 10px 0px 10px 0px;
     }
 }
+
+.solutionsMain {
+    margin-top: 110px;
+
+    @media (max-width:670px) {
+        margin-top: 25px;
+    }
+}
+
+.video_series {
+    margin-top: 111px;
+
+    @media (max-width: 670px) {
+        margin-top: 10px;
+    }
+}

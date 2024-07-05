@@ -8,6 +8,8 @@ import SearchInput from "@/components/SearchInput/SearchInput";
 import SectionInfo from "@/components/SectionInfo/SectionInfo";
 import B2BSection from "@/components/B2BSection/B2BSection";
 import FormEmail from "@/components/FormEmail/FormEmail";
+import SolutionsList from "@/components/SolutionsList/SolutionsList";
+import VideoSeries from "@/components/VideoSeries/VideoSeries";
 
 export default function Home() {
 
@@ -53,6 +55,15 @@ export default function Home() {
         style={{ height: 430, marginTop: 149 }}
       />
 
+      <div className={styles.solutionsMain}>
+        <div className="container">
+          <SolutionsList />
+        </div>
+      </div>
+
+      <div className={styles.video_series}>
+        <VideoSeries />
+      </div>
 
     </main>
   );

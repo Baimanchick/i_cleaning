@@ -1,6 +1,11 @@
+.carousel {
+    display: none !important;
+}
+
 @media (max-width: 670px) {
     .carousel {
-        margin-bottom: 40px !important;
+
+        display: initial !important;
     }
 
     .sliderSolutions {

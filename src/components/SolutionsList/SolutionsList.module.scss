@@ -1,0 +1,23 @@
+.title {
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.solutionsList {
+    margin-top: 50px;
+}
+
+@media (max-width: 670px) {
+    .solutionsList {
+        display: none !important;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .title_container {
+        justify-content: flex-start !important;
+    }
+}
