@@ -10,6 +10,7 @@ import B2BSection from "@/components/B2BSection/B2BSection";
 import FormEmail from "@/components/FormEmail/FormEmail";
 import SolutionsList from "@/components/SolutionsList/SolutionsList";
 import VideoSeries from "@/components/VideoSeries/VideoSeries";
+import FAQSection from "@/components/FAQSection/FAQSection";
 
 export default function Home() {
 
@@ -63,6 +64,14 @@ export default function Home() {
 
       <div className={styles.video_series}>
         <VideoSeries />
+      </div>
+
+      <div className={styles.FAQSection}>
+        <div className='container'>
+          <hr style={{ marginBottom: 10 }} className={styles.FAQhr} />
+          <FAQSection />
+          <hr style={{ marginTop: 10 }} className={styles.FAQhr} />
+        </div>
       </div>
 
     </main>

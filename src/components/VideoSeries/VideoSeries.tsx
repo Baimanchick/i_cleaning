@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { Tabs } from "antd";
 import styles from "./VideoSeries.module.scss";
 import { Flex } from 'antd';
-import { getClassByIndex } from '@/helpers/functions/getClassByIndex';
 import Loading from '../Loading/Loading';
 import { Button } from '../Button/Button';
 import instagram from "@/assets/svgs/b2b_section/instagram.svg"
@@ -13,6 +12,7 @@ import telegram from "@/assets/svgs/b2b_section/telegram.svg"
 import whatsapp from "@/assets/svgs/b2b_section/whatsapp.svg"
 import { fetchVideo } from '@/store/features/video/videoSlice';
 import { VideoType } from '@/helpers/interfaces/video.interface';
+import { getClassVideoByIndex } from '@/helpers/functions/getClassVideoByIndex';
 
 function VideoSeries() {
     const { video, loading } = useAppSelector((state) => state.video);
@@ -39,11 +39,11 @@ function VideoSeries() {
         key: video.id ? video.id.toString() : '',
         label: video.title,
         children: (
-            <Flex className={styles.image_main} key={`video-main-${video.id}`}>
-                <Flex key={video.id} className={styles.image_container_first}>
+            <Flex className={styles.video_main} key={`video-main-${video.id}`}>
+                <Flex key={video.id} className={styles.video_container_first}>
                     {video.videos.slice(0, 1).map((vid: any, index) => (
                         <iframe
-                            className={`${styles.image} ${getClassByIndex(index, styles)}`}
+                            className={`${styles.video} ${getClassVideoByIndex(index, styles)}`}
                             src={vid.link}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
@@ -52,11 +52,11 @@ function VideoSeries() {
                         ></iframe>
                     ))}
                 </Flex>
-                <Flex gap={16} className={styles.image_container_second} key={`video-second-${video.id}`}>
+                <Flex gap={16} className={styles.video_container_second} key={`video-second-${video.id}`}>
                     <Flex className={styles.justify} gap={16} key={`video-second-row1-${video.id}`}>
                         {video.videos.slice(1, 3).map((vid: any, index) => (
                             <iframe
-                                className={`${styles.image} ${getClassByIndex(index + 1, styles)}`}
+                                className={`${styles.video} ${getClassVideoByIndex(index + 1, styles)}`}
                                 src={vid.link}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerPolicy="strict-origin-when-cross-origin"
@@ -68,7 +68,7 @@ function VideoSeries() {
                     <Flex className={styles.justify} gap={16} key={`video-second-row2-${video.id}`}>
                         {video.videos.slice(3, 5).map((vid: any, index) => (
                             <iframe
-                                className={`${styles.image} ${getClassByIndex(index + 3, styles)}`}
+                                className={`${styles.video} ${getClassVideoByIndex(index + 3, styles)}`}
                                 src={vid.link}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerPolicy="strict-origin-when-cross-origin"

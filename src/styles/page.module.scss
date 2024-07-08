@@ -48,6 +48,28 @@
     margin-top: 111px;
 
     @media (max-width: 670px) {
+        margin-top: 30px;
+    }
+}
+
+.FAQSection {
+    margin-top: 111px;
+
+    @media (max-width: 670px) {
         margin-top: 10px;
+    }
+}
+
+.FAQhr {
+    display: none;
+
+    @media (max-width: 670px) {
+        display: block;
+        background-color: rgba(101, 101, 101, 1);
+        height: 1px;
+        width: 100%;
+        margin: 0 auto;
+        border: none;
+
     }
 }

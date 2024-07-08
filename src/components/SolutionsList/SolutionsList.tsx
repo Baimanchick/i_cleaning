@@ -18,18 +18,18 @@ function SolutionsList() {
                 <SolutionsCard
                     icon={card1}
                     title='ECO Friendly certified shampoo'
-                    text='Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the Automated carpet washing on the latest generation equipment. '
+                    text='Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the surface of the product. The pressure of the brushes is adjusted for a specific type of pile. Specialized shampoos for carpets are used. They are hypoallergenic, safe for children and animals.'
                 />
 
                 <SolutionsCard
                     icon={card2}
-                    title='ECO Friendly certified shampoo'
-                    text='Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the Automated carpet washing on the latest generation equipment. '
+                    title='Quality guarantee'
+                    text='Technologists carry out additional quality control. After their approval, a clean carpet is packed in an individual sleeve and handed over for delivery.'
                 />
                 <SolutionsCard
                     icon={card3}
-                    title='ECO Friendly certified shampoo'
-                    text='Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the Automated carpet washing on the latest generation equipment. 5 types of brushes clean deep dirt from the base and from the Automated carpet washing on the latest generation equipment. '
+                    title='Comfort / Meeting deadlines'
+                    text='Welcome to ICLEANING , professional carpet cleaning company! At our state-of-the-art facility, we specialize in handling large volumes of carpet cleaning tasks efficiently and delivering results in record time.'
                 />
 
             </Flex>
