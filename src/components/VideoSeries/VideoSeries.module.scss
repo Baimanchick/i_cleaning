@@ -117,7 +117,47 @@
 }
 
 @media (max-width: 670px) {
-    .videoComponent {
-        display: none;
+
+    .video_mobile {
+        width: auto !important;
+        height: auto !important;
+        border-radius: 10px;
+        border: none !important;
+    }
+
+    .iFrameContainer {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .secons_title {
+        font-size: 20px;
+    }
+
+    .main_title_container {
+        justify-content: flex-start !important;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    .contact {
+        font-size: 12px;
+    }
+
+    .btn {
+        border-radius: 30px !important;
+        height: 35px !important;
+        width: auto !important;
+    }
+
+    .tab_container {
+        max-width: 95%;
+        margin: 0 auto;
     }
 }

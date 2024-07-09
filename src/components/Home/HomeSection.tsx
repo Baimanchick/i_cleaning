@@ -18,6 +18,8 @@ import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
 import { fetchServices } from '@/store/features/service/serviceSlice';
 import { fetchCustomer } from "@/store/features/customer/customerSlice";
 import { fetchVideo } from '@/store/features/video/videoSlice';
+import useWindowSize from '@/hooks/useWindowSize';
+import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 
 function HomeSection() {
     const dispatch = useAppDispatch()
@@ -25,6 +27,8 @@ function HomeSection() {
     const { service, loading: serviceLoading } = useAppSelector((state) => state.service)
     const { customer, loading: customerLoading } = useAppSelector((state) => state.customer)
     const { video, loading: videoLoading } = useAppSelector((state) => state.video)
+    const windowSize = useWindowSize();
+    const isMobile = windowSize.width && windowSize.width < 670;
 
     useEffect(() => {
         dispatch(fetchServices())
@@ -80,9 +84,17 @@ function HomeSection() {
                 </div>
             </div>
 
-            <div className={styles.video_series}>
-                <VideoSeries video={video} loading={videoLoading} />
-            </div>
+            {isMobile ? (
+                <div className={styles.video_series}>
+                    <SliderVideoSeries video={video} loading={videoLoading} />
+                </div>
+            ) : (
+                <div className={styles.video_series}>
+                    <VideoSeries video={video} loading={videoLoading} />
+                </div>
+            )}
+
+
 
             <div className={styles.FAQSection}>
                 <div className='container'>
