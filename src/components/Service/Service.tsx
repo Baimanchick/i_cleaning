@@ -1,22 +1,16 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from "./Service.module.scss"
 import { Flex } from 'antd'
 import ServiceCard from '../ServiceCard/ServiceCard'
 import SliderService from '../SliderService/SliderService'
-import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
-import { fetchService } from '@/store/features/service/serviceSlice'
 import { ServiceType } from '@/helpers/interfaces/service.interface'
 import Loading from '../Loading/Loading'
+import { ServiceProps } from './Service.prop'
 
-function Service() {
-    const dispatch = useAppDispatch()
-    const { service, loading } = useAppSelector((state) => state.service)
+function Service({ service, loading }: ServiceProps) {
 
-    useEffect(() => {
-        dispatch(fetchService())
-    }, [dispatch])
 
     return (
         <>

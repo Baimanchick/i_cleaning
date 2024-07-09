@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
-import { fetchCustomer } from "@/store/features/customer/customerSlice";
+import Image from 'next/image'
 import { CustomerType } from "@/helpers/interfaces/customer.interface";
 import { Tabs } from "antd";
 import styles from "./B2BSection.module.scss";
@@ -13,15 +12,10 @@ import { Button } from '../Button/Button';
 import instagram from "@/assets/svgs/b2b_section/instagram.svg"
 import telegram from "@/assets/svgs/b2b_section/telegram.svg"
 import whatsapp from "@/assets/svgs/b2b_section/whatsapp.svg"
+import { B2BSectionProps } from './B2BSection.props';
 
-function B2BSection() {
-    const { customer, loading } = useAppSelector((state) => state.customer);
-    const dispatch = useAppDispatch();
+function B2BSection({ customer, loading }: B2BSectionProps) {
     const [activeKey, setActiveKey] = useState<string | null>(null);
-
-    useEffect(() => {
-        dispatch(fetchCustomer());
-    }, [dispatch]);
 
     useEffect(() => {
         if (customer && customer.length > 0) {

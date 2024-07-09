@@ -23,20 +23,20 @@ const serviceSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchService.pending, (state) => {
+    builder.addCase(fetchServices.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(fetchService.fulfilled, (state, action) => {
+    builder.addCase(fetchServices.fulfilled, (state, action) => {
       state.loading = false;
     });
-    builder.addCase(fetchService.rejected, (state) => {
+    builder.addCase(fetchServices.rejected, (state) => {
       state.loading = false;
     });
   },
 });
 
-export const fetchService = createAsyncThunk<unknown, void>(
-  "service/fetchService",
+export const fetchServices = createAsyncThunk<unknown, void>(
+  "service/fetchServices",
   async (_, { dispatch, rejectWithValue }) => {
     try {
       const response = await $axios.get(`${API_URL}/categories/`);
@@ -51,6 +51,26 @@ export const fetchService = createAsyncThunk<unknown, void>(
     }
   }
 );
+
+export const fetchOneService = createAsyncThunk<
+  { service: ServiceType },
+  number,
+  { rejectValue: unknown }
+>("service/fetchOneService", async (id, { dispatch, rejectWithValue }) => {
+  try {
+    const response = await $axios.get(`${API_URL}/categories/${id}/`);
+    const data: any = { service: response.data };
+    dispatch(serviceSlice.actions.setService(data));
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      return rejectWithValue(
+        error.response?.data?.message || "Failed to fetch product"
+      );
+    }
+    throw error;
+  }
+});
 
 export const { setService } = serviceSlice.actions;
 export default serviceSlice.reducer;

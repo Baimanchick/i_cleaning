@@ -1,4 +1,3 @@
-// RootLayout Component
 import React from 'react';
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import '@/styles/globals.scss'
@@ -15,7 +14,6 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
       <StoreProvider>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </StoreProvider>
-      <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
     </body>
   </html>
 );

@@ -9,12 +9,9 @@ import styles from "./SliderService.module.scss"
 
 
 function SliderService({ service }: SliderServiceProps) {
-    const onChange = (currentSlide: number) => {
-        console.log(currentSlide);
-    };
 
     return (
-        <Carousel className={styles.carousel} afterChange={onChange}>
+        <Carousel className={styles.carousel}>
             {service && service.map((item: ServiceType, index: number) => (
                 <Flex key={index} gap={20}>
                     <ServiceCard service={item} />

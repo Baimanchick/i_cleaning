@@ -7,7 +7,7 @@ import { faqText } from '@/helpers/data/faqText'
 
 function FAQSection() {
     return (
-        <div >
+        <div>
             <Flex className={styles.containerTitle} justify={'center'}>
                 <h2 className={styles.main_title}>WHY CHOOSE ICLEANING?</h2>
             </Flex>
@@ -15,8 +15,8 @@ function FAQSection() {
                 <Flex className={styles.wrapper_left} style={{ maxWidth: 717 }} gap={30} align={'center'}>
                     <img src={line.src} className={styles.line} alt="line" />
                     <Flex className={styles.text_container} style={{ flexDirection: 'column', height: '535px' }} justify={'space-between'}>
-                        {faqText.map((item: any) => (
-                            <div className={styles.text}>
+                        {faqText.map((item: any, index: number) => (
+                            <div key={index} className={styles.text}>
                                 <h2 className={styles.title}>{item.title}</h2>
                                 <p className={styles.text}>{item.text}</p>
                             </div>

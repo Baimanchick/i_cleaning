@@ -13,15 +13,10 @@ import whatsapp from "@/assets/svgs/b2b_section/whatsapp.svg"
 import { fetchVideo } from '@/store/features/video/videoSlice';
 import { VideoType } from '@/helpers/interfaces/video.interface';
 import { getClassVideoByIndex } from '@/helpers/functions/getClassVideoByIndex';
+import { VideoSeriesProps } from './VideoSeries.props';
 
-function VideoSeries() {
-    const { video, loading } = useAppSelector((state) => state.video);
-    const dispatch = useAppDispatch();
+function VideoSeries({ video, loading }: VideoSeriesProps) {
     const [activeKey, setActiveKey] = useState<string | null>(null);
-
-    useEffect(() => {
-        dispatch(fetchVideo());
-    }, [dispatch]);
 
     useEffect(() => {
         if (video && video.length > 0) {
@@ -32,6 +27,14 @@ function VideoSeries() {
     const onTabChange = (key: string) => {
         setActiveKey(key);
     };
+
+    if (loading) {
+        return <Loading />;
+    }
+
+    if (!video || video.length === 0) {
+        return <div>No videos available</div>;
+    }
 
     console.log(video);
 
@@ -45,8 +48,8 @@ function VideoSeries() {
                         <iframe
                             className={`${styles.video} ${getClassVideoByIndex(index, styles)}`}
                             src={vid.link}
+                            data-cookieblock-src={vid.link}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
                             key={`video-main-${vid.id}`}
                         ></iframe>
@@ -59,7 +62,6 @@ function VideoSeries() {
                                 className={`${styles.video} ${getClassVideoByIndex(index + 1, styles)}`}
                                 src={vid.link}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerPolicy="strict-origin-when-cross-origin"
                                 allowFullScreen
                                 key={`video-main-${vid.id}`}
                             ></iframe>
@@ -71,7 +73,6 @@ function VideoSeries() {
                                 className={`${styles.video} ${getClassVideoByIndex(index + 3, styles)}`}
                                 src={vid.link}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerPolicy="strict-origin-when-cross-origin"
                                 allowFullScreen
                                 key={`video-main-${vid.id}`}
                             ></iframe>
@@ -91,41 +92,35 @@ function VideoSeries() {
                     <h2 className={styles.title}>VIDEO SERIES</h2>
                 </Flex>
             </div>
-            {loading ? (
-                <Loading />
-            ) : (
-                <>
-                    <div className={styles.tab_container}>
-                        <Flex style={{ width: '100%' }} className={styles.tabs_main} justify={'space-between'}>
-                            <Tabs className={styles.Tabs} centered={true} items={customerMapped} onChange={onTabChange} />
-                            <div></div>
-                        </Flex>
-                    </div>
-                    <div className='container'>
-                        <Flex style={{ flexDirection: 'column' }}>
-                            <Flex gap={20} style={{ flexDirection: 'column' }}>
-                                <h2 className={styles.secons_title}>FOR {activeCustomerTitle}</h2>
-                                <p className={styles.text}>
-                                    Our company's expertise extends beyond just cleaning services; we prioritize video satisfaction and tailor our approach to meet the unique needs of each client. Additionally, our commitment to sustainability sets us apart, as we strive to minimize our environmental footprint while delivering exceptional results. In Dubai's competitive market, our dedication to professionalism, eco-friendliness, and personalized service makes us the ideal partner for companies seeking reliable and environmentally conscious cleaning solutions.
-                                </p>
+
+            <div className={styles.tab_container}>
+                <Flex style={{ width: '100%' }} className={styles.tabs_main} justify={'space-between'}>
+                    <Tabs className={styles.Tabs} centered={true} items={customerMapped} onChange={onTabChange} />
+                </Flex>
+            </div>
+            <div className='container'>
+                <Flex style={{ flexDirection: 'column' }}>
+                    <Flex gap={20} style={{ flexDirection: 'column' }}>
+                        <h2 className={styles.secons_title}>FOR {activeCustomerTitle}</h2>
+                        <p className={styles.text}>
+                            Our company's expertise extends beyond just cleaning services; we prioritize video satisfaction and tailor our approach to meet the unique needs of each client. Additionally, our commitment to sustainability sets us apart, as we strive to minimize our environmental footprint while delivering exceptional results. In Dubai's competitive market, our dedication to professionalism, eco-friendliness, and personalized service makes us the ideal partner for companies seeking reliable and environmentally conscious cleaning solutions.
+                        </p>
+                    </Flex>
+                    <Flex className={styles.utils} align={'center'} justify={'space-between'}>
+                        <div>
+                            <Button className={styles.btn} appearance='blue'>Application</Button>
+                        </div>
+                        <Flex gap={20} style={{ flexDirection: 'column' }}>
+                            <Flex justify={'flex-end'} gap={12}>
+                                <img src={instagram.src} alt="instagram" />
+                                <img src={telegram.src} alt="telegram" />
+                                <img src={whatsapp.src} alt="whatsapp" />
                             </Flex>
-                            <Flex className={styles.utils} align={'center'} justify={'space-between'}>
-                                <div>
-                                    <Button className={styles.btn} appearance='blue'>Application</Button>
-                                </div>
-                                <Flex gap={20} style={{ flexDirection: 'column' }}>
-                                    <Flex justify={'flex-end'} gap={12}>
-                                        <img src={instagram.src} alt="instagram" />
-                                        <img src={telegram.src} alt="telegram" />
-                                        <img src={whatsapp.src} alt="whatsapp" />
-                                    </Flex>
-                                    <div className={styles.contact}>Contact info: +971508648401</div>
-                                </Flex>
-                            </Flex>
+                            <div className={styles.contact}>Contact info: +971508648401</div>
                         </Flex>
-                    </div>
-                </>
-            )}
+                    </Flex>
+                </Flex>
+            </div>
         </div>
     );
 }

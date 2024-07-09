@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react';
-import { Flex, Form, Input } from 'antd';
+import React, { useState } from 'react';
+import { Flex, Form, Input, message } from 'antd';
 import styles from "./FormEmail.module.scss";
 import FormSectionTitle from '../FormSectionTitle/FormSectionTitle';
 import { Button } from '../Button/Button';
@@ -30,6 +30,7 @@ const validateMessages = {
 
 function FormEmail() {
     const [form] = Form.useForm();
+    const [submitted, setSubmitted] = useState(false);
 
     const onFinish = (values: FormState) => {
         const postData = {
@@ -43,11 +44,16 @@ function FormEmail() {
         $axios.post(`${API_URL}/form/`, postData)
             .then(response => {
                 console.log('Success:', response);
+                form.resetFields();
+                setSubmitted(true);
+                message.success('Mail sent successfully. Thank you for your email.');
             })
             .catch(error => {
                 console.error('Error:', error);
+                message.error('Something went wrong. Please try again');
             });
     };
+
 
     return (
         <Flex className={styles.MainFlex} gap={63} align={'center'}>
@@ -100,9 +106,6 @@ function FormEmail() {
                         className={styles.btn}
                         appearance='blue'
                         htmlType='submit'
-                        disabled={
-                            !form.isFieldTouched
-                        }
                     >
                         Submit
                     </Button>

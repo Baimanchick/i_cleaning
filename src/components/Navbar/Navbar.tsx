@@ -29,7 +29,6 @@ function Navbar() {
 
 
         ];
-        // if (isAuth) {
         return items;
     }, []);
 
