@@ -11,6 +11,8 @@ import FormEmail from "@/components/FormEmail/FormEmail";
 import SolutionsList from "@/components/SolutionsList/SolutionsList";
 import VideoSeries from "@/components/VideoSeries/VideoSeries";
 import FAQSection from "@/components/FAQSection/FAQSection";
+import TrustSection from "@/components/TrustSection/TrustSection";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
 
@@ -73,6 +75,14 @@ export default function Home() {
           <hr style={{ marginTop: 10 }} className={styles.FAQhr} />
         </div>
       </div>
+
+      <div className={styles.trustSection}>
+        <div className='container'>
+          <TrustSection />
+        </div>
+      </div>
+
+      <Footer />
 
     </main>
   );

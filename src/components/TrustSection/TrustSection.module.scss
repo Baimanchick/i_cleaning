@@ -1,0 +1,48 @@
+@media screen and (max-width: 1350px) {
+    .logo_container {
+        gap: 160px !important;
+    }
+
+    .icon {
+        width: 100px;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:890px) {
+    .logo_container {
+        gap: 120px !important;
+    }
+}
+
+@media screen and (max-width:775px) {
+    .logo_container {
+        gap: 70px !important;
+    }
+}
+
+@media screen and (max-width:670px) {
+    .logo_container {
+        justify-content: space-between !important;
+        gap: initial !important;
+        width: 100%;
+    }
+
+    .logo_container_last {
+        display: none !important;
+    }
+
+    .icon {
+        width: 65px;
+        height: 30px;
+    }
+
+    .container {
+        margin-top: 30px !important;
+        row-gap: 20px !important;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+}

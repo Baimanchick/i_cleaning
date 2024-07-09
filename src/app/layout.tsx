@@ -1,3 +1,4 @@
+// RootLayout Component
 import React from 'react';
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import '@/styles/globals.scss'
@@ -10,7 +11,7 @@ export const metadata = {
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (
   <html lang="en">
-    <body >
+    <body>
       <StoreProvider>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </StoreProvider>

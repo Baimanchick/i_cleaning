@@ -85,7 +85,7 @@ function VideoSeries() {
     const activeCustomerTitle = video?.find((item: VideoType) => item.id?.toString() === activeKey)?.title;
 
     return (
-        <>
+        <div className={styles.videoComponent}>
             <div className='container'>
                 <Flex className={styles.main_title_container} justify={'center'}>
                     <h2 className={styles.title}>VIDEO SERIES</h2>
@@ -126,7 +126,7 @@ function VideoSeries() {
                     </div>
                 </>
             )}
-        </>
+        </div>
     );
 }
 

@@ -1,0 +1,49 @@
+.geo {
+    font-size: 20px;
+}
+
+.footer {
+    background-color: rgba(47, 47, 47, 1);
+    height: 100%;
+    margin-top: 111px;
+}
+
+.title {
+    font-size: 32px;
+    color: #fff;
+}
+
+.text {
+    color: #fff;
+}
+
+@media (max-width:770px) {
+    .container {
+        flex-direction: column !important;
+        justify-content: initial !important;
+        row-gap: 25px !important;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .utils {
+        flex-direction: initial !important;
+        gap: initial !important;
+        justify-content: space-between !important;
+    }
+
+    .utilsIcon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .footer {
+        margin-top: initial;
+    }
+}
