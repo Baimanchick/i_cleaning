@@ -11,9 +11,11 @@ import english from "@/assets/svgs/navbar/english.svg";
 import BurgerMenu from '@/components/BurgerMenu/BurgerMenu'
 import { MenuItem } from './Navbar.props';
 import SearchInput from '../SearchInput/SearchInput';
+import { useRouter } from 'next/navigation';
 
 
 function Navbar() {
+    const navigate = useRouter()
     const [open, setOpen] = useState(false);
     const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
     const menuItems: MenuItem[] = useMemo(() => {
@@ -43,8 +45,8 @@ function Navbar() {
     return (
         <Flex className={styles.navbar} justify={'space-between'} style={{ marginTop: 30 }}>
             <Flex>
-                <img className={styles.logo_mobile} src={mobile_logo.src} alt="logo" />
-                <img className={styles.logo} src={logo.src} alt="logo" />
+                <img onClick={() => navigate.push('/')} className={styles.logo_mobile} src={mobile_logo.src} alt="logo" />
+                <img onClick={() => navigate.push('/')} className={styles.logo} src={logo.src} alt="logo" />
             </Flex>
             <Flex className={styles.navbar_tool} justify={'space-between'} style={{ width: 892 }} align={'flex-start'}>
                 <Flex className={styles.search_container} style={{ flexDirection: 'column' }}>

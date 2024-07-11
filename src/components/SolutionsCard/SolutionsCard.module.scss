@@ -17,15 +17,7 @@
     color: #fff;
 }
 
-.knowMoreButton {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    color: #fff;
-    font-size: 18px;
-    font-family: "Monument-Regular";
-    margin-top: 20px;
-}
+
 
 @media (max-width: 670px) {
     .mainCard {
@@ -41,9 +33,6 @@
         font-size: 12px;
     }
 
-    .knowMoreButton {
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 960px) {
@@ -55,7 +44,5 @@
         font-size: 15px;
     }
 
-    .knowMoreButton {
-        font-size: 15px;
-    }
+
 }

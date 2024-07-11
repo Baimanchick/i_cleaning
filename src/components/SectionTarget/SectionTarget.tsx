@@ -20,9 +20,6 @@ function SectionTarget() {
                 <div>
                     <p className={styles.paragrapgh}>YOUR HOME IS OUR RESPONSIBILITY - TRUST US WITH ITS CARE.</p>
                 </div>
-                <div>
-                    <Button className={styles.btn} appearance='blue'>Learn more</Button>
-                </div>
             </Flex>
         </Flex>
     )

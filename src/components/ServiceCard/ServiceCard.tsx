@@ -1,13 +1,15 @@
+'use client'
+
 import React from 'react'
 import styles from './ServiceCard.module.scss'
 import { Flex } from 'antd'
 import { Button } from '../Button/Button'
-import carpet from '../../assets/service_section/carpet.jpg'
-import carpeting from '../../assets/service_section/carpeting.png'
 import { ServiceCardProps } from './ServiceCardProps.props'
+import { useRouter } from 'next/navigation'
 
 
 function ServiceCard({ service }: ServiceCardProps) {
+    const navigate = useRouter();
 
     return (
         <Flex className={`${styles.service_card} ${service.image2 === null ? styles.singleImageContainer : ''}`} gap={16}>
@@ -33,7 +35,7 @@ function ServiceCard({ service }: ServiceCardProps) {
                 <p className={styles.paragraph}>
                     {service.text}
                 </p>
-                <Button className={styles.btn} appearance='blue'>{'←'} Know more</Button>
+                <Button onClick={() => navigate.push(`/service/${service.id}`)} className={styles.btn} appearance='blue'>{'←'} Know more</Button>
             </Flex>
         </Flex>
     )

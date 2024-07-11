@@ -5,12 +5,12 @@ import { API_URL } from "@/utils/const";
 import $axios from "@/utils/axios";
 
 export interface ServiceState {
-  service: ServiceType[];
+  service: ServiceType | null;
   loading: boolean;
 }
 
 const initialState: ServiceState = {
-  service: [],
+  service: null,
   loading: false,
 };
 
@@ -18,8 +18,8 @@ const serviceSlice = createSlice({
   name: "service",
   initialState,
   reducers: {
-    setService: (state, action: PayloadAction<ServiceState>) => {
-      state.service = action.payload.service;
+    setService: (state, action: PayloadAction<ServiceType>) => {
+      state.service = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -28,6 +28,7 @@ const serviceSlice = createSlice({
     });
     builder.addCase(fetchServices.fulfilled, (state, action) => {
       state.loading = false;
+      state.service = action.payload as ServiceType;
     });
     builder.addCase(fetchServices.rejected, (state) => {
       state.loading = false;
@@ -40,8 +41,7 @@ export const fetchServices = createAsyncThunk<unknown, void>(
   async (_, { dispatch, rejectWithValue }) => {
     try {
       const response = await $axios.get(`${API_URL}/categories/`);
-      const data: ServiceState = { service: response.data, loading: false };
-
+      const data = response.data as ServiceType;
       dispatch(serviceSlice.actions.setService(data));
       return data;
     } catch (error) {
@@ -53,13 +53,13 @@ export const fetchServices = createAsyncThunk<unknown, void>(
 );
 
 export const fetchOneService = createAsyncThunk<
-  { service: ServiceType },
+  ServiceType,
   number,
   { rejectValue: unknown }
 >("service/fetchOneService", async (id, { dispatch, rejectWithValue }) => {
   try {
     const response = await $axios.get(`${API_URL}/categories/${id}/`);
-    const data: any = { service: response.data };
+    const data = response.data as ServiceType;
     dispatch(serviceSlice.actions.setService(data));
     return data;
   } catch (error) {

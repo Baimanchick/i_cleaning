@@ -20,7 +20,7 @@ function Service({ service, loading }: ServiceProps) {
             ) : (
                 <>
                     <Flex className={styles.service_list}>
-                        {service && service.map((item: ServiceType, index: number) => (
+                        {Array.isArray(service) && service.map((item: ServiceType, index: number) => (
                             <ServiceCard service={item} key={index} />
                         ))}
                     </Flex>

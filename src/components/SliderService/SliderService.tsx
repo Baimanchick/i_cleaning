@@ -12,7 +12,7 @@ function SliderService({ service }: SliderServiceProps) {
 
     return (
         <Carousel className={styles.carousel}>
-            {service && service.map((item: ServiceType, index: number) => (
+            {Array.isArray(service) && service.map((item: ServiceType, index: number) => (
                 <Flex key={index} gap={20}>
                     <ServiceCard service={item} />
                 </Flex>

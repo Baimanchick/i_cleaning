@@ -33,7 +33,6 @@ function SliderVideoSeries({ video, loading }: SliderVideoSeriesProps) {
         return <div>No videos available</div>;
     }
 
-    console.log(video);
 
     const customerMapped = video?.map((video: VideoType) => ({
         key: video.id ? video.id.toString() : '',

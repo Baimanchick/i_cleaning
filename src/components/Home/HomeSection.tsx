@@ -41,11 +41,11 @@ function HomeSection() {
             <div className="container">
                 <Navbar />
             </div>
-            <div className="search-container">
+            <div className={styles.search_container}>
                 <SearchInput />
             </div>
-            <div className="section-target-container">
-                <div className="section-target">
+            <div className={styles.section_target_container}>
+                <div className={styles.section_target}>
                     <SectionTarget />
                 </div>
             </div>

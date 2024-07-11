@@ -1,5 +1,5 @@
-import { Service } from "@/helpers/interfaces/service.interface";
+import { ServiceType } from "@/helpers/interfaces/service.interface";
 
 export interface ServiceCardProps {
-  service: Service;
+  service: ServiceType;
 }

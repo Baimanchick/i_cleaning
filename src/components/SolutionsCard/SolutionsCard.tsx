@@ -33,7 +33,7 @@ function SolutionsCard({ icon, title, text }: SolutionsCardProps) {
                             {showFullText && ` ${remainingText}`}
                         </p>
                         <button
-                            className={styles.knowMoreButton}
+                            className='knowMoreButton'
                             onClick={() => setShowFullText(!showFullText)}
                         >
                             {showFullText ? '↑ Show less ' : '↓ Know More'}

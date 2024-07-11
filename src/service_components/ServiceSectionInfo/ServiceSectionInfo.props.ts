@@ -1,6 +1,5 @@
 import { ServiceType } from "@/helpers/interfaces/service.interface";
 
-export interface ServiceProps {
+export interface ServiceSectionInfoProps {
   service: ServiceType | null;
-  loading: any;
 }
