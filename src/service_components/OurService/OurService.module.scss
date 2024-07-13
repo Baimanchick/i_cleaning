@@ -1,0 +1,48 @@
+.main {
+    margin-top: 111px;
+
+    @media (max-width: 670px) {
+        margin-top: 10px;
+    }
+
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+.fourFlex {
+    flex-wrap: wrap !important;
+    flex-direction: initial !important;
+    justify-content: space-between !important;
+
+    @media (max-width: 1345px) {
+        flex-direction: column !important;
+    }
+
+    @media (max-width: 670px) {
+        display: none !important;
+    }
+}
+
+.flex {
+    @media (max-width: 670px) {
+        display: none !important;
+    }
+}
+
+.carousel {
+    display: none !important;
+
+    @media (max-width: 670px) {
+        display: block !important;
+    }
+}
+
+.title {
+    @media (max-width: 670px) {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}

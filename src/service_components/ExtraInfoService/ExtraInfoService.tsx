@@ -4,13 +4,13 @@ import { ExtraInfoServiceProps } from './ExtraInfoService.props'
 import { Video } from '@/helpers/interfaces/service.interface'
 import { Flex } from 'antd'
 
-function ExtraInfoService({ service }: ExtraInfoServiceProps) {
-    const [expanded, setExpanded] = useState(true);
+function ExtraInfoService({ service, style, }: ExtraInfoServiceProps) {
+    const [expanded, setExpanded] = useState(false);
     const toggleExpansion = () => {
         setExpanded(!expanded);
     };
     return (
-        service?.secondvideos_set?.map((info: Video, index: number) => (
+        service?.map((info: Video, index: number) => (
             <div key={index}>
                 <div key={index} className='container'>
                     <Flex className={styles.wrapper}>
@@ -40,7 +40,7 @@ function ExtraInfoService({ service }: ExtraInfoServiceProps) {
                                 <button
                                     className='knowMoreButton'
                                     onClick={toggleExpansion}
-                                    style={{ color: 'black', textAlign: 'left' }}
+                                    style={{ color: 'black', textAlign: 'left', ...style }}
                                 >
                                     {expanded ? '↑ ' : '↓ '}
                                 </button>

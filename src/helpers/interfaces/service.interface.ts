@@ -7,8 +7,9 @@ export interface ServiceType {
   title_for_image2?: string;
   mainimages_set?: MainImage[];
   videos_set?: Video[];
-  materials_set?: Material[];
+  material_set?: Material[];
   bigimage_set?: BigImage[];
+  service_set: ServiceSet[];
   secondvideos_set?: SecondVideo[];
   carousel_set?: Carousel[];
   carouselitem_set?: CarouselItem[];
@@ -26,6 +27,22 @@ export interface MainImage {
   title?: string;
   text?: any;
   category?: number;
+}
+
+export interface ServiceSet {
+  id?: number;
+  category?: number;
+  items?: ServiceSetItems[];
+  name?: string;
+  title?: string;
+}
+
+export interface ServiceSetItems {
+  id?: number;
+  image?: string;
+  service?: number;
+  title: string;
+  text: string;
 }
 
 export interface Video {
