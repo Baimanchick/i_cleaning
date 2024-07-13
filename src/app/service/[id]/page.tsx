@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { id: string } }) {
             <ServiceSectionInfo service={service} />
             <ExtraInfoService service={service?.secondvideos_set} />
             <OurService service={service?.service_set} />
-            <ExtraInfoService style={{ display: 'none' }} service={service?.videos_set} />
+            <ExtraInfoService style={{ marginTop: 40 }} service={service?.videos_set} />
             <OurService service={service?.material_set} />
             <FaqCurtains />
 
