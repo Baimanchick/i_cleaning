@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Benefits.module.scss"
 import { BenefitsProps } from './Benefits.props'
 import { Carousel, Flex } from 'antd'

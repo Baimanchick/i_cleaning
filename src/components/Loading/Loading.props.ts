@@ -1,3 +1,3 @@
 export interface LaodingProps {
-  style?: React.CSSProperties;
+  styles?: React.CSSProperties;
 }

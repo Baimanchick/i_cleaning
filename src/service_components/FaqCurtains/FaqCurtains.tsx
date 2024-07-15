@@ -1,11 +1,13 @@
-import React from 'react'
+
+import React, { useEffect, useState } from 'react'
 import styles from "./FaqCurtains.module.scss"
 import line from "@/assets/svgs/faq/line.svg"
 import { Flex } from 'antd'
 import { faqTextCurtains } from '@/helpers/data/faqText'
+import { FaqCurtainsProps } from './FaqCurtains.props'
 
 
-function FaqCurtains() {
+function FaqCurtains({ service }: FaqCurtainsProps) {
     return (
         <div className={`container ${styles.main}`}>
             <Flex className={styles.containerTitle} justify={'center'}>
