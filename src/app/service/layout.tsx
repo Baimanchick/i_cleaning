@@ -3,9 +3,8 @@ import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import '@/styles/globals.scss'
 import { StoreProvider } from '@/store/StoreProvider';
 import Navbar from '@/components/Navbar/Navbar';
-import Link from 'next/link';
-import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
-import Footer from '@/components/Footer/Footer';
+import SearchInput from '@/components/SearchInput/SearchInput';
+import { Footer } from 'antd/es/layout/layout';
 
 export const metadata = {
     title: 'I-Cleaning Service',
@@ -20,6 +19,9 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
                 <StyledComponentsRegistry>
                     <div className='container'>
                         <Navbar />
+                    </div>
+                    <div className={'search_container'}>
+                        <SearchInput />
                     </div>
                     {children}
                     {/* <Footer /> */}

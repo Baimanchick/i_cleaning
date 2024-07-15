@@ -3,6 +3,7 @@
 import Loading from "@/components/Loading/Loading";
 import { ServiceType } from "@/helpers/interfaces/service.interface";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
+import Benefits from "@/service_components/Benefits/Benefits";
 import ExtraInfoService from "@/service_components/ExtraInfoService/ExtraInfoService";
 import FaqCurtains from "@/service_components/FaqCurtains/FaqCurtains";
 import OurService from "@/service_components/OurService/OurService";
@@ -29,12 +30,14 @@ export default function Page({ params }: { params: { id: string } }) {
 
     return (
         <div className='qwerty'>
+
             <ServiceSectionInfo service={service} />
             <ExtraInfoService service={service?.secondvideos_set} />
             <OurService service={service?.service_set} />
             <ExtraInfoService style={{ marginTop: 40 }} service={service?.videos_set} />
             <OurService service={service?.material_set} />
             <FaqCurtains />
+            <Benefits service={service?.benefits_set} />
 
 
         </div>

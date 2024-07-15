@@ -67,7 +67,17 @@ a {
     }
 }
 
+.search_container {
+    display: none;
 
+    @media screen and (max-width: 670px) {
+        display: flex;
+        justify-content: center;
+        max-width: 95%;
+        margin: 0 auto;
+
+    }
+}
 
 .knowMoreButton {
     border: none;
