@@ -10,7 +10,9 @@ function Benefits({ service }: BenefitsProps) {
         <div className='container'>
             <div className={styles.main}>
                 <div className={styles.title_container}>
-                    <h2>OUR BENEFITS</h2>
+                    {service?.map((item: Benefit, index: number) => (
+                        <h2>{item.title}</h2>
+                    ))}
                 </div>
                 <Flex gap={16} className={styles.list} justify={'space-between'}>
                     {service?.map((item: Benefit, index: number) => (

@@ -140,6 +140,7 @@ export interface Process {
 export interface Benefit {
   id?: number;
   text?: any;
+  title?: string;
   category?: number;
 }
 
@@ -147,6 +148,14 @@ export interface Need {
   id?: number;
   image: string;
   title?: string;
-  extra_info?: string;
+  items?: NeedItems[];
   category?: number;
+  svg: string;
+}
+
+export interface NeedItems {
+  id: number;
+  need: number;
+  text: string;
+  title: string;
 }

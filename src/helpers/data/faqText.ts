@@ -20,26 +20,3 @@ export const faqText = [
     text: "Our commitment to excellence has earned us a reputation for high-quality service and customer satisfaction. We strive to exceed your expectations every time.",
   },
 ];
-
-export const faqTextCurtains = [
-  {
-    title: "IMPROVED AIR QUALITY",
-    text: "Curtains accumulate dust and allergens. Cleaning improves indoor air quality.",
-  },
-  {
-    title: "EXTENDED SERVICE LIFE",
-    text: "Regular cleaning preserves the structure and color of the fabric, preventing wear and tear.",
-  },
-  {
-    title: "AESTHETIC APPEARANCE",
-    text: "Clean curtains give a well-maintained look to the room and eliminate unpleasant odors.",
-  },
-  {
-    title: "PREVENT THE GROWTH OF GERMS AND MOLD",
-    text: "Cleaning prevents the growth of bacteria and mold.",
-  },
-  {
-    title: "COST SAVINGS",
-    text: "Cleaning helps avoid the cost of replacing curtains, extending their lifespan.",
-  },
-];
