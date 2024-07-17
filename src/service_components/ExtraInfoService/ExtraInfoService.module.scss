@@ -49,13 +49,19 @@
     }
 }
 
+@media (max-width:1645px) {
+    .image {
+        width: 365px;
+    }
+}
+
 @media screen and (max-width:1585px) {
     .iframe {
         width: 612px;
     }
 
     .image {
-        width: 300px;
+        width: 365px;
     }
 
     .imageContainer {

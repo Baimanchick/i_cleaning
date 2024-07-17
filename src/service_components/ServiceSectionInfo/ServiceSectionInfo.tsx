@@ -17,7 +17,7 @@ function ServiceSectionInfo({ service }: ServiceSectionInfoProps) {
     };
 
     return (
-        service.mainimages_set?.map((info: MainImage, index: number) => (
+        service?.map((info: MainImage, index: number) => (
             <div className={styles.info_container} style={{ backgroundImage: `url(${info.image})` }} key={index}>
                 <div className={styles.content}>
                     <Flex className={styles.text_container} style={{ flexDirection: 'column' }} gap={36}>

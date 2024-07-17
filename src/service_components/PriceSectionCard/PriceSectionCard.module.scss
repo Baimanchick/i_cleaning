@@ -1,0 +1,72 @@
+.card {
+    height: 781px;
+    width: 536px;
+    background-color: rgba(47, 47, 47, 1);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.card_item_simple {
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.price_simple {
+    margin-top: 22px;
+    color: rgba(63, 113, 201, 1);
+    font-size: 32px;
+}
+
+.title_simple {
+    color: rgba(255, 255, 255, 1);
+    font-size: 32px;
+}
+
+.text_simple {
+    margin-top: 5px;
+    color: rgba(152, 152, 152, 1);
+    font-size: 24px;
+}
+
+.btn_main_simple {
+    margin-top: 100px;
+}
+
+.btn_simple {
+    width: 167px !important;
+    height: 50px !important;
+    border-radius: 50px !important;
+
+    &:hover {
+        border: 1px solid #000 !important;
+    }
+
+    @media screen and (max-width: 1050px) {
+        width: 135px !important;
+        height: 40px !important;
+    }
+
+    @media screen and (max-width: 945px) {
+        width: 115px !important;
+        height: 25px !important;
+        font-size: 10px !important;
+    }
+}
+
+.img_simple {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    margin-top: 32px;
+    object-fit: cover;
+
+}
+
+@media (max-width: 670px) {
+    .card {
+        margin: 0px 15px 0px 15px;
+        height: 579px;
+    }
+}

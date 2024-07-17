@@ -1,5 +1,5 @@
-import { ServiceType } from "@/helpers/interfaces/service.interface";
+import { MainImage } from "@/helpers/interfaces/service.interface";
 
 export interface ServiceSectionInfoProps {
-  service: ServiceType | null;
+  service: MainImage[] | undefined;
 }

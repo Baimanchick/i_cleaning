@@ -16,9 +16,10 @@ export interface ServiceType {
   subscriptionplans_set?: SubscriptionPlan[];
   sizeandprices_set?: SizeAndPrice[];
   handmade_set?: HandMade[];
-  process_set?: Process[];
+  process_set?: ProcessType[];
   benefits_set?: Benefit[];
   need_set?: Need[];
+  card_set?: CardSet[];
 }
 
 export interface MainImage {
@@ -129,7 +130,7 @@ export interface HandMade {
   category?: number;
 }
 
-export interface Process {
+export interface ProcessType {
   id?: number;
   image: string;
   title?: string;
@@ -158,5 +159,30 @@ export interface NeedItems {
   id: number;
   need: number;
   text: string;
+  title: string;
+}
+
+export interface CardItem {
+  card: number;
+  desciprtion: string;
+  expression: string | null;
+  extra_info: string;
+  id: number;
+  image: string;
+  is_discount: boolean;
+  is_house: boolean;
+  is_simple: boolean;
+  old_price: string | null;
+  price: string;
+  size: string | null;
+  square: string | null;
+  title: string;
+  title2: string | null;
+}
+
+export interface CardSet {
+  category: number;
+  id: number;
+  items: CardItem[];
   title: string;
 }

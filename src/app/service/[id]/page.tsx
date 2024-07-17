@@ -1,12 +1,12 @@
 'use client'
 
-import Loading from "@/components/Loading/Loading";
-import { ServiceType } from "@/helpers/interfaces/service.interface";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import Benefits from "@/service_components/Benefits/Benefits";
 import ExtraInfoService from "@/service_components/ExtraInfoService/ExtraInfoService";
 import FaqCurtains from "@/service_components/FaqCurtains/FaqCurtains";
 import OurService from "@/service_components/OurService/OurService";
+import PriceSection from "@/service_components/PriceSection/PriceSection";
+import Process from "@/service_components/Process/Process";
 import ServiceSectionInfo from "@/service_components/ServiceSectionInfo/ServiceSectionInfo";
 import Subscription from "@/service_components/Subscription/Subscription";
 import WhatWeRemove from "@/service_components/WhatWeRemove/WhatWeRemove";
@@ -32,14 +32,11 @@ export default function Page({ params }: { params: { id: string } }) {
         )
     }
 
-    console.log(params.id);
-
-
     console.log(service);
 
     return (
-        <div className='qwerty'>
-            <ServiceSectionInfo service={service} />
+        <>
+            <ServiceSectionInfo service={service?.mainimages_set} />
             <ExtraInfoService service={service?.secondvideos_set} />
             <OurService service={service?.service_set} />
             <ExtraInfoService style={{ marginTop: 40 }} service={service?.videos_set} />
@@ -48,6 +45,8 @@ export default function Page({ params }: { params: { id: string } }) {
             <Benefits service={service?.benefits_set} />
             <WhatWeRemove service={service?.carousel_set} />
             <Subscription service={service?.bigimage_set} />
-        </div>
+            <PriceSection service={service?.card_set} />
+            <Process service={service?.process_set} />
+        </>
     );
 }

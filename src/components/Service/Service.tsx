@@ -16,7 +16,7 @@ function Service({ service, loading }: ServiceProps) {
         <>
             <h2 className={styles.service_title}>CLEANING SERVICES</h2>
             {loading ? (
-                <Loading style={{ marginBottom: 40 }} />
+                <Loading styles={{ marginBottom: 40 }} />
             ) : (
                 <>
                     <Flex className={styles.service_list}>

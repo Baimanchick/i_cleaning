@@ -4,7 +4,7 @@ import '@/styles/globals.scss'
 import { StoreProvider } from '@/store/StoreProvider';
 import Navbar from '@/components/Navbar/Navbar';
 import SearchInput from '@/components/SearchInput/SearchInput';
-import { Footer } from 'antd/es/layout/layout';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata = {
     title: 'I-Cleaning Service',
@@ -24,7 +24,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
                         <SearchInput />
                     </div>
                     {children}
-                    {/* <Footer /> */}
+                    <Footer />
                 </StyledComponentsRegistry>
             </StoreProvider>
         </body>
