@@ -1,0 +1,97 @@
+.title {
+    text-align: center;
+    font-size: 48px;
+
+    @media (max-width: 670px) {
+        font-size: 20px;
+    }
+}
+
+.carousel {
+    display: none !important;
+}
+
+.text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main {
+    margin-top: 111px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 35px 0px 35px 0px;
+
+    @media(max-width: 670px) {
+        margin-top: 10px;
+    }
+}
+
+.list {
+    margin-top: 80px;
+    width: 100%;
+}
+
+.card_title {
+    text-align: center;
+    color: rgba(101, 101, 101, 1);
+    font-size: 28px;
+    margin-top: 25px;
+}
+
+.card_text {
+    text-align: center;
+    color: rgba(101, 101, 101, 1);
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 360px;
+}
+
+.image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width:1325px) {
+    .card_title {
+        font-size: 18px;
+    }
+
+    .card_text {
+        font-size: 16px;
+    }
+
+    .image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width:1110px) {
+    .list {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+}
+
+@media (max-width: 770px) {
+    .carousel {
+        display: initial !important;
+        margin-top: 20px;
+    }
+
+    .card {
+        display: flex !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+
+    .list {
+        display: none !important;
+    }
+}

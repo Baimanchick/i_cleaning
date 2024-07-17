@@ -11,7 +11,7 @@ export interface ServiceType {
   bigimage_set?: BigImage[];
   service_set: ServiceSet[];
   secondvideos_set?: SecondVideo[];
-  carousel_set?: Carousel[];
+  carousel_set?: CarouselType[];
   carouselitem_set?: CarouselItem[];
   subscriptionplans_set?: SubscriptionPlan[];
   sizeandprices_set?: SizeAndPrice[];
@@ -81,11 +81,12 @@ export interface SecondVideo {
   category?: number;
 }
 
-export interface Carousel {
+export interface CarouselType {
   id?: number;
   title?: string;
   text?: any;
   category?: number;
+  items?: CarouselItem[];
 }
 
 export interface CarouselItem {

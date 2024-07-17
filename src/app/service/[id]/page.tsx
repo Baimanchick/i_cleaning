@@ -8,6 +8,8 @@ import ExtraInfoService from "@/service_components/ExtraInfoService/ExtraInfoSer
 import FaqCurtains from "@/service_components/FaqCurtains/FaqCurtains";
 import OurService from "@/service_components/OurService/OurService";
 import ServiceSectionInfo from "@/service_components/ServiceSectionInfo/ServiceSectionInfo";
+import Subscription from "@/service_components/Subscription/Subscription";
+import WhatWeRemove from "@/service_components/WhatWeRemove/WhatWeRemove";
 import { fetchOneService } from "@/store/features/service/serviceSlice";
 import { Spin } from "antd";
 import { useEffect } from "react";
@@ -30,6 +32,9 @@ export default function Page({ params }: { params: { id: string } }) {
         )
     }
 
+    console.log(params.id);
+
+
     console.log(service);
 
     return (
@@ -41,6 +46,8 @@ export default function Page({ params }: { params: { id: string } }) {
             <OurService service={service?.material_set} />
             <FaqCurtains service={service?.need_set} />
             <Benefits service={service?.benefits_set} />
+            <WhatWeRemove service={service?.carousel_set} />
+            <Subscription service={service?.bigimage_set} />
         </div>
     );
 }
