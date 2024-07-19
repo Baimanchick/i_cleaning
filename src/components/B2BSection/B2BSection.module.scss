@@ -38,8 +38,12 @@
 }
 
 
+
+
 .tabs_main {
     margin-bottom: 46px;
+    max-width: 1920px !important;
+    margin: 0 auto !important;
 
     //UnderLine
     div>div:first-child::before {

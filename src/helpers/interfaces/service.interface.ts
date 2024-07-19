@@ -43,7 +43,7 @@ export interface ServiceSetItems {
   image?: string;
   service?: number;
   title: string;
-  text: string;
+  text: string | any;
 }
 
 export interface Video {
@@ -166,7 +166,7 @@ export interface CardItem {
   card: number;
   desciprtion: string;
   expression: string | null;
-  extra_info: string;
+  extra_info: string[];
   id: number;
   image: string;
   is_discount: boolean;

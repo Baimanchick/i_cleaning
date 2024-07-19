@@ -44,7 +44,7 @@ export default function Page({ params }: { params: { id: string } }) {
             <FaqCurtains service={service?.need_set} />
             <Benefits service={service?.benefits_set} />
             <WhatWeRemove service={service?.carousel_set} />
-            <Subscription service={service?.bigimage_set} />
+            <Subscription service={service?.subscriptionplans_set} />
             <PriceSection service={service?.card_set} />
             <Process service={service?.process_set} />
         </>

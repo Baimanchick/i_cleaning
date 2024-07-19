@@ -3,6 +3,7 @@ import styles from "./WhatWeRemove.module.scss"
 import { WhatWeRemoveProps } from './WhatWeRemove.props'
 import { Carousel, Flex } from 'antd'
 import { CarouselType, CarouselItem } from '@/helpers/interfaces/service.interface'
+import { API_URL } from '@/utils/const'
 
 function WhatWeRemove({ service }: WhatWeRemoveProps) {
     return (
@@ -17,7 +18,7 @@ function WhatWeRemove({ service }: WhatWeRemoveProps) {
                         <Flex className={styles.list} justify={'space-between'}>
                             {item.items?.map((card: CarouselItem, index: number) => (
                                 <Flex className={styles.card} key={index} style={{ flexDirection: 'column', }} align={'center'}>
-                                    <img className={styles.image} src={card.image} alt={card.title} />
+                                    <img className={styles.image} src={`${API_URL}${card.image}`} alt={card.title} />
                                     <h2 className={styles.card_title}>{card.title}</h2>
                                     <p className={styles.card_text}>{card.text}</p>
                                 </Flex>
@@ -26,7 +27,7 @@ function WhatWeRemove({ service }: WhatWeRemoveProps) {
                         <Carousel className={styles.carousel}>
                             {item.items?.map((card: CarouselItem, index: number) => (
                                 <Flex className={styles.card} key={index} style={{ flexDirection: 'column', }} align={'center'}>
-                                    <img className={styles.image} src={card.image} alt={card.title} />
+                                    <img className={styles.image} src={`${API_URL}${card.image}`} alt={card.title} />
                                     <h2 className={styles.card_title}>{card.title}</h2>
                                     <p className={styles.card_text}>{card.text}</p>
                                 </Flex>

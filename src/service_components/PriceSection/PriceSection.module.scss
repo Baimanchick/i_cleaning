@@ -4,6 +4,10 @@
     @media (max-width: 670px) {
         margin-top: 10px;
     }
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
 }
 
 .section_title_container {
@@ -21,6 +25,14 @@
 
 .card_container_three {
     justify-content: space-between !important;
+
+    @media (max-width:1200px) {
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+        justify-content: center !important;
+
+    }
+
 }
 
 .carousel {

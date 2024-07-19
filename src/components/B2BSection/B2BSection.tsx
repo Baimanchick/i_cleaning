@@ -86,7 +86,7 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                             <Tabs className={styles.Tabs} centered={true} items={customerMapped} onChange={onTabChange} />
                         </Flex>
                     </div>
-                    <div className='container'>
+                    <div style={{ marginTop: 40 }} className='container'>
                         <Flex style={{ flexDirection: 'column' }}>
                             <Flex gap={20} style={{ flexDirection: 'column' }}>
                                 <h2 className={styles.secons_title}>FOR {activeCustomerTitle}</h2>
