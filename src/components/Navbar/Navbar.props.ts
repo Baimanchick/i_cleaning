@@ -2,7 +2,6 @@ import { RefObject } from "react";
 
 export interface MenuItem {
   label: string;
-  link: string;
   action?: () => void;
   ref?: NavbarRefs | any;
 }

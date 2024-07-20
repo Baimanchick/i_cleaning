@@ -18,13 +18,13 @@ function Navbar({ refs }: NavbarProps) {
     const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
     const menuItems: MenuItem[] = useMemo(() => {
         const items: MenuItem[] = [
-            { label: "Main menu", link: "/", ref: refs.mainRef },
-            { label: "Cleaning services", link: "/service", ref: refs.serviceRef },
-            { label: "B2B customers", link: "/customers", ref: refs.customerRef },
-            { label: "Video series", link: "/video", ref: refs.videoRef },
-            { label: "Why choose Icleaning?", link: "/faq", ref: refs.faqRef },
-            { label: "Partners", link: "/partners", ref: refs.trustRef },
-            { label: "Contacts", link: "/contacts", ref: refs.footerRef },
+            { label: "Main menu", ref: refs.mainRef },
+            { label: "Cleaning services", ref: refs.serviceRef },
+            { label: "B2B customers", ref: refs.customerRef },
+            { label: "Video series", ref: refs.videoRef },
+            { label: "Why choose Icleaning?", ref: refs.faqRef },
+            { label: "Partners", ref: refs.trustRef },
+            { label: "Contacts", ref: refs.footerRef },
         ];
         return items;
     }, [refs]);
