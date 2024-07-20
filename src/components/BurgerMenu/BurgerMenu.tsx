@@ -7,6 +7,10 @@ import { BurgerMenuProps } from './BurgerMenu.props';
 import { MenuItem } from '../Navbar/Navbar.props';
 
 function BurgerMenu({ placement, onClose, open, menuItems }: BurgerMenuProps) {
+    const handleMenuItemClick = (ref: any) => {
+        onClose();
+        ref.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <>
@@ -24,7 +28,9 @@ function BurgerMenu({ placement, onClose, open, menuItems }: BurgerMenuProps) {
                 </Flex>
                 <Flex style={{ flexDirection: 'column', marginTop: 60 }} gap={18} justify={'center'} >
                     {menuItems.map((item: MenuItem, index: number) => (
-                        <li key={index} className={styles.navigation_item}>{item.label}</li>
+                        <li key={index} className={styles.navigation_item} onClick={() => handleMenuItemClick(item.ref)}>
+                            {item.label}
+                        </li>
                     ))}
                 </Flex>
             </Drawer>
@@ -32,4 +38,4 @@ function BurgerMenu({ placement, onClose, open, menuItems }: BurgerMenuProps) {
     );
 }
 
-export default BurgerMenu
+export default BurgerMenu;

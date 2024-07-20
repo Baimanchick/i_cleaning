@@ -5,34 +5,29 @@ import { DrawerProps, Flex } from 'antd'
 import styles from "./Navbar.module.scss"
 import logo from "@/assets/svgs/navbar/logo_i.svg";
 import mobile_logo from "@/assets/svgs/navbar/mobile_icon.svg";
-
 import burger from "@/assets/svgs/navbar/burger.svg";
 import english from "@/assets/svgs/navbar/english.svg";
 import BurgerMenu from '@/components/BurgerMenu/BurgerMenu'
-import { MenuItem } from './Navbar.props';
+import { MenuItem, NavbarProps } from './Navbar.props';
 import SearchInput from '../SearchInput/SearchInput';
 import { useRouter } from 'next/navigation';
 
-
-function Navbar() {
+function Navbar({ refs }: NavbarProps) {
     const navigate = useRouter()
     const [open, setOpen] = useState(false);
     const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
     const menuItems: MenuItem[] = useMemo(() => {
         const items: MenuItem[] = [
-            { label: "Main menu", link: "/" },
-            { label: "Cleaning services", link: "/service" },
-            { label: "B2B customers", link: "/customers" },
-            { label: "Video series", link: "/video" },
-            { label: "Why choose Icleaning?", link: "/faq" },
-            { label: "Partners", link: "/partners" },
-            { label: "Contacts", link: "/contacts" },
-            { label: "Privacy policy", link: "/privacy" },
-
-
+            { label: "Main menu", link: "/", ref: refs.mainRef },
+            { label: "Cleaning services", link: "/service", ref: refs.serviceRef },
+            { label: "B2B customers", link: "/customers", ref: refs.customerRef },
+            { label: "Video series", link: "/video", ref: refs.videoRef },
+            { label: "Why choose Icleaning?", link: "/faq", ref: refs.faqRef },
+            { label: "Partners", link: "/partners", ref: refs.trustRef },
+            { label: "Contacts", link: "/contacts", ref: refs.footerRef },
         ];
         return items;
-    }, []);
+    }, [refs]);
 
     const showDrawer = () => {
         setOpen(true);
@@ -68,4 +63,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Navbar;

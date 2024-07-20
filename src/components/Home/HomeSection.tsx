@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Navbar from "@/components/Navbar/Navbar";
 import SectionTarget from "@/components/SectionTarget/SectionTarget";
 import Service from "@/components/Service/Service";
@@ -30,6 +30,15 @@ function HomeSection() {
     const windowSize = useWindowSize();
     const isMobile = windowSize.width && windowSize.width < 670;
 
+    const mainRef = useRef(null)
+    const serviceRef = useRef(null);
+    const customerRef = useRef(null);
+    const videoRef = useRef(null);
+    const faqRef = useRef(null);
+    const trustRef = useRef(null)
+    const footerRef = useRef(null)
+
+
     useEffect(() => {
         dispatch(fetchServices())
         dispatch(fetchCustomer())
@@ -39,17 +48,17 @@ function HomeSection() {
     return (
         <div>
             <div className="container">
-                <Navbar />
+                <Navbar refs={{ serviceRef, customerRef, videoRef, faqRef, mainRef, trustRef, footerRef }} />
             </div>
             <div className={"search_container"}>
                 <SearchInput />
             </div>
-            <div className={styles.section_target_container}>
+            <div ref={mainRef} className={styles.section_target_container}>
                 <div className={styles.section_target}>
                     <SectionTarget />
                 </div>
             </div>
-            <div className="container">
+            <div ref={serviceRef} className="container">
                 <Service service={service} loading={serviceLoading} />
             </div>
             <SectionInfo
@@ -60,7 +69,7 @@ function HomeSection() {
                 style={{ height: 430, marginTop: 149 }}
             />
 
-            <div className={styles.b2b_section}>
+            <div ref={customerRef} className={styles.b2b_section}>
                 <B2BSection customer={customer} loading={customerLoading} />
             </div>
 
@@ -85,18 +94,16 @@ function HomeSection() {
             </div>
 
             {isMobile ? (
-                <div className={styles.video_series}>
+                <div ref={videoRef} className={styles.video_series}>
                     <SliderVideoSeries video={video} loading={videoLoading} />
                 </div>
             ) : (
-                <div className={styles.video_series}>
+                <div ref={videoRef} className={styles.video_series}>
                     <VideoSeries video={video} loading={videoLoading} />
                 </div>
             )}
 
-
-
-            <div className={styles.FAQSection}>
+            <div ref={faqRef} className={styles.FAQSection}>
                 <div className='container'>
                     <hr style={{ marginBottom: 10 }} className={styles.FAQhr} />
                     <FAQSection />
@@ -104,14 +111,15 @@ function HomeSection() {
                 </div>
             </div>
 
-            <div className={styles.trustSection}>
+            <div ref={trustRef} className={styles.trustSection}>
                 <div className='container'>
                     <TrustSection />
                 </div>
             </div>
 
-            <Footer />
-
+            <div ref={footerRef}>
+                <Footer />
+            </div>
         </div>
     )
 }
