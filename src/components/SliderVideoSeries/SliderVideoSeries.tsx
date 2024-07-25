@@ -21,6 +21,10 @@ function SliderVideoSeries({ video, loading }: SliderVideoSeriesProps) {
         }
     }, [video]);
 
+    const handleRedirect = (url: string) => {
+        window.open(url, '_blank');
+    };
+
     const onTabChange = (key: string) => {
         setActiveKey(key);
     };
@@ -87,9 +91,15 @@ function SliderVideoSeries({ video, loading }: SliderVideoSeriesProps) {
                         </div>
                         <Flex gap={20} style={{ flexDirection: 'column' }}>
                             <Flex justify={'flex-end'} gap={12}>
-                                <img src={instagram.src} alt="instagram" />
-                                <img src={telegram.src} alt="telegram" />
-                                <img src={whatsapp.src} alt="whatsapp" />
+                                <Flex onClick={() => handleRedirect('https://www.instagram.com/icleaning_dubai/')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                                    <img src={instagram.src} alt="instagram" />
+                                </Flex>
+                                <Flex onClick={() => handleRedirect('https://t.me/icleaning_dubai')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                                    <img src={telegram.src} alt="telegram" />
+                                </Flex>
+                                <Flex onClick={() => handleRedirect('https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                                    <img src={whatsapp.src} alt="whatsapp" />
+                                </Flex>
                             </Flex>
                             <div className={styles.contact}>Contact info: +971508648401</div>
                         </Flex>

@@ -54,7 +54,7 @@ function Footer() {
                     <Flex gap={23} style={{ flexDirection: 'column' }}>
                         <Flex ><h2 className={styles.title}>Social media</h2></Flex>
                         <Flex className={styles.utils} style={{ flexDirection: 'column', }} gap={10}>
-                            <Flex onClick={() => handleRedirect('https://t.me/yourtelegram')} align={'center'} style={{ cursor: 'pointer' }} gap={8} >
+                            <Flex onClick={() => handleRedirect('https://t.me/icleaning_dubai')} align={'center'} style={{ cursor: 'pointer' }} gap={8} >
                                 <img className={styles.utilsIcon} src={telegram.src} alt="icon" />
                                 <p className={styles.text}>
                                     Telegram
