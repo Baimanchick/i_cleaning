@@ -7,7 +7,8 @@ export interface MenuItem {
 }
 
 export interface NavbarProps {
-  refs: NavbarRefs;
+  refs?: NavbarRefs;
+  isHomePage?: boolean;
 }
 
 export interface NavbarRefs {

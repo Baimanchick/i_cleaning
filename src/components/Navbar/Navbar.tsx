@@ -12,19 +12,26 @@ import { MenuItem, NavbarProps } from './Navbar.props';
 import SearchInput from '../SearchInput/SearchInput';
 import { useRouter } from 'next/navigation';
 
-function Navbar({ refs }: NavbarProps) {
-    const navigate = useRouter()
+function Navbar({ refs, isHomePage }: NavbarProps) {
+    const navigate = useRouter();
     const [open, setOpen] = useState(false);
     const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
     const menuItems: MenuItem[] = useMemo(() => {
         const items: MenuItem[] = [
-            { label: "Main menu", ref: refs.mainRef },
-            { label: "Cleaning services", ref: refs.serviceRef },
-            { label: "B2B customers", ref: refs.customerRef },
-            { label: "Video series", ref: refs.videoRef },
-            { label: "Why choose Icleaning?", ref: refs.faqRef },
-            { label: "Partners", ref: refs.trustRef },
-            { label: "Contacts", ref: refs.footerRef },
+            { label: "Main menu", ref: refs?.mainRef },
+            { label: "Cleaning services", ref: refs?.serviceRef },
+            { label: "B2B customers", ref: refs?.customerRef },
+            { label: "Video series", ref: refs?.videoRef },
+            { label: "Why choose Icleaning?", ref: refs?.faqRef },
+            { label: "Partners", ref: refs?.trustRef },
+            { label: "Contacts", ref: refs?.footerRef },
+        ];
+        return items;
+    }, [refs]);
+
+    const menuItemsService: any = useMemo(() => {
+        const items: any = [
+            { label: "Main menu", link: '/' },
         ];
         return items;
     }, [refs]);
@@ -58,7 +65,7 @@ function Navbar({ refs }: NavbarProps) {
                     <img onClick={showDrawer} className={styles.burger} src={burger.src} alt="burger" />
                 </Flex>
             </Flex>
-            <BurgerMenu menuItems={menuItems} open={open} placement={placement} onClose={onClose} />
+            <BurgerMenu isHomePage={isHomePage} menuItemsService={menuItemsService} menuItems={menuItems} open={open} placement={placement} onClose={onClose} />
         </Flex >
     )
 }

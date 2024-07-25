@@ -13,9 +13,23 @@ import instagram from "@/assets/svgs/b2b_section/instagram.svg"
 import telegram from "@/assets/svgs/b2b_section/telegram.svg"
 import whatsapp from "@/assets/svgs/b2b_section/whatsapp.svg"
 import { B2BSectionProps } from './B2BSection.props';
+import ModalApp from '@/service_components/ModalApp/ModalApp';
 
 function B2BSection({ customer, loading }: B2BSectionProps) {
     const [activeKey, setActiveKey] = useState<string | null>(null);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleRedirect = (url: string) => {
+        window.open(url, '_blank');
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
 
     useEffect(() => {
         if (customer && customer.length > 0) {
@@ -96,19 +110,26 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                             </Flex>
                             <Flex className={styles.utils} align={'center'} justify={'space-between'}>
                                 <div>
-                                    <Button className={styles.btn} appearance='blue'>Application</Button>
+                                    <Button onClick={showModal} className={styles.btn} appearance='blue'>Application</Button>
                                 </div>
                                 <Flex gap={20} style={{ flexDirection: 'column' }}>
                                     <Flex justify={'flex-end'} gap={12}>
-                                        <img src={instagram.src} alt="instagram" />
-                                        <img src={telegram.src} alt="telegram" />
-                                        <img src={whatsapp.src} alt="whatsapp" />
+                                        <Flex onClick={() => handleRedirect('https://www.instagram.com/icleaning_dubai/')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                                            <img src={instagram.src} alt="instagram" />
+                                        </Flex>
+                                        <Flex onClick={() => handleRedirect('https://t.me/yourtelegram')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                                            <img src={telegram.src} alt="telegram" />
+                                        </Flex>
+                                        <Flex onClick={() => handleRedirect('https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                                            <img src={whatsapp.src} alt="whatsapp" />
+                                        </Flex>
                                     </Flex>
                                     <div className={styles.contact}>Contact info: +971508648401</div>
                                 </Flex>
                             </Flex>
                         </Flex>
                     </div>
+                    <ModalApp handleCancel={handleCancel} isModalVisible={isModalVisible} />
                 </>
             )}
         </>

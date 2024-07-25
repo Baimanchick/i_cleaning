@@ -12,7 +12,7 @@ import Subscription from "@/service_components/Subscription/Subscription";
 import WhatWeRemove from "@/service_components/WhatWeRemove/WhatWeRemove";
 import { fetchOneService } from "@/store/features/service/serviceSlice";
 import { Spin } from "antd";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Page({ params }: { params: { id: string } }) {
     const dispatch = useAppDispatch();
@@ -24,6 +24,7 @@ export default function Page({ params }: { params: { id: string } }) {
         }
     }, [params.id, dispatch]);
 
+
     if (loading) {
         return (
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', position: 'absolute', zIndex: 100, top: 0, background: 'rgba(245, 249, 252, 1)' }}>
@@ -31,6 +32,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
         )
     }
+
 
 
     return (

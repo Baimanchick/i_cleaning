@@ -169,3 +169,18 @@ a {
         justify-content: space-between !important;
     }
 }
+
+//FormBackground
+:where(.css-dev-only-do-not-override-m4timi).ant-modal .ant-modal-content {
+    background-color: #2F2F2F !important;
+}
+
+//SvgColor
+:where(.css-dev-only-do-not-override-m4timi)[class^="ant-modal"] [class^="ant-modal"],
+:where(.css-dev-only-do-not-override-m4timi)[class*=" ant-modal"] [class^="ant-modal"],
+:where(.css-dev-only-do-not-override-m4timi)[class^="ant-modal"] [class*=" ant-modal"],
+:where(.css-dev-only-do-not-override-m4timi)[class*=" ant-modal"] [class*=" ant-modal"] {
+    svg {
+        color: #fff !important;
+    }
+}

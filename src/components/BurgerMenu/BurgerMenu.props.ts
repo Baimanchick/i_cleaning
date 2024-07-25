@@ -5,4 +5,6 @@ export interface BurgerMenuProps {
   onClose: any;
   open: boolean;
   menuItems: MenuItem[];
+  menuItemsService?: any[];
+  isHomePage?: boolean | undefined;
 }

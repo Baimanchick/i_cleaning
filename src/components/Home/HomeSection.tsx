@@ -22,33 +22,32 @@ import useWindowSize from '@/hooks/useWindowSize';
 import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 
 function HomeSection() {
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
 
-    const { service, loading: serviceLoading } = useAppSelector((state) => state.service)
-    const { customer, loading: customerLoading } = useAppSelector((state) => state.customer)
-    const { video, loading: videoLoading } = useAppSelector((state) => state.video)
+    const { service, loading: serviceLoading } = useAppSelector((state) => state.service);
+    const { customer, loading: customerLoading } = useAppSelector((state) => state.customer);
+    const { video, loading: videoLoading } = useAppSelector((state) => state.video);
     const windowSize = useWindowSize();
     const isMobile = windowSize.width && windowSize.width < 670;
 
-    const mainRef = useRef(null)
+    const mainRef = useRef(null);
     const serviceRef = useRef(null);
     const customerRef = useRef(null);
     const videoRef = useRef(null);
     const faqRef = useRef(null);
-    const trustRef = useRef(null)
-    const footerRef = useRef(null)
-
+    const trustRef = useRef(null);
+    const footerRef = useRef(null);
 
     useEffect(() => {
-        dispatch(fetchServices())
-        dispatch(fetchCustomer())
-        dispatch(fetchVideo())
-    }, [dispatch])
+        dispatch(fetchServices());
+        dispatch(fetchCustomer());
+        dispatch(fetchVideo());
+    }, [dispatch]);
 
     return (
         <div>
             <div className="container">
-                <Navbar refs={{ serviceRef, customerRef, videoRef, faqRef, mainRef, trustRef, footerRef }} />
+                <Navbar isHomePage={true} refs={{ mainRef, serviceRef, videoRef, customerRef, faqRef, trustRef, footerRef }} />
             </div>
             <div className={"search_container"}>
                 <SearchInput />
@@ -68,17 +67,14 @@ function HomeSection() {
                 imageUrl="https://i.imgur.com/x3QRtc0.jpeg"
                 style={{ height: 430, marginTop: 149 }}
             />
-
             <div ref={customerRef} className={styles.b2b_section}>
                 <B2BSection customer={customer} loading={customerLoading} />
             </div>
-
             <div className={styles.form_main}>
                 <div className={styles.form_container}>
                     <FormEmail />
                 </div>
             </div>
-
             <SectionInfo
                 title="REGULAR VACUUMING IS NOT ENOUGH"
                 text="The average indoor carpet holds 200,000 bacteria per square inch. While regular vacuuming is essential, it’s not enough to keep your carpets truly clean. A clean carpet protects your health by improving air quality. It also improves the look and feel of a space."
@@ -86,13 +82,11 @@ function HomeSection() {
                 imageUrl="https://i.imgur.com/n9NNDIt.jpeg"
                 style={{ height: 430, marginTop: 149 }}
             />
-
             <div className={styles.solutionsMain}>
                 <div className="container">
                     <SolutionsList />
                 </div>
             </div>
-
             {isMobile ? (
                 <div ref={videoRef} className={styles.video_series}>
                     <SliderVideoSeries video={video} loading={videoLoading} />
@@ -102,7 +96,6 @@ function HomeSection() {
                     <VideoSeries video={video} loading={videoLoading} />
                 </div>
             )}
-
             <div ref={faqRef} className={styles.FAQSection}>
                 <div className='container'>
                     <hr style={{ marginBottom: 10 }} className={styles.FAQhr} />
@@ -110,13 +103,11 @@ function HomeSection() {
                     <hr style={{ marginTop: 10 }} className={styles.FAQhr} />
                 </div>
             </div>
-
             <div ref={trustRef} className={styles.trustSection}>
                 <div className='container'>
                     <TrustSection />
                 </div>
             </div>
-
             <div ref={footerRef}>
                 <Footer />
             </div>

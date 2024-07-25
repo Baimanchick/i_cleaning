@@ -60,13 +60,13 @@ function Footer() {
                                     Telegram
                                 </p>
                             </Flex>
-                            <Flex onClick={() => handleRedirect('https://t.me/yourtelegram')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                            <Flex onClick={() => handleRedirect('https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
                                 <img className={styles.utilsIcon} src={whatsapp.src} alt="icon" />
                                 <p className={styles.text}>
                                     Whatsapp
                                 </p>
                             </Flex>
-                            <Flex onClick={() => handleRedirect('https://t.me/yourtelegram')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
+                            <Flex onClick={() => handleRedirect('https://www.instagram.com/icleaning_dubai/')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
                                 <img className={styles.utilsIcon} src={instagram.src} alt="icon" />
                                 <p className={styles.text}>
                                     Instagram
