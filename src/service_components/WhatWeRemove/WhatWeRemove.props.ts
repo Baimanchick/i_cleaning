@@ -1,5 +1,5 @@
-import { Carousel } from "@/helpers/interfaces/service.interface";
+import { CarouselType } from "@/helpers/interfaces/service.interface";
 
 export interface WhatWeRemoveProps {
-  service: Carousel[] | undefined;
+  service: CarouselType[] | undefined;
 }
