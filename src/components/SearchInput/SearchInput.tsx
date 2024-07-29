@@ -26,7 +26,7 @@ function SearchInput() {
                 onSelect={onSelect}
                 onSearch={(text) => setOptions(getPanelValue(text))}
                 placeholder="Search"
-                className={styles.input}
+                className={styles.AutoComplete}
             />
         </>
     );
