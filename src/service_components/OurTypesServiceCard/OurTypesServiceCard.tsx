@@ -15,9 +15,7 @@ function OurTypesServiceCard({ service, isFour }: OurTypesServiceCardProps) {
 
     return (
         <Flex className={isFour ? styles.mainFour : styles.main} gap={17}>
-            <div>
-                <img className={styles.image} src={service?.image} alt="" />
-            </div>
+            <img className={styles.image} src={service?.image} alt="" />
             <Flex className={`${styles.text} ${service?.text.length > 20 && isFour ? styles.big_text : ''}`} style={{ flexDirection: 'column', maxWidth: 802, rowGap: 17 }}>
                 <h2 className={isFour ? styles.isFourTitle : styles.title}>{service?.title}</h2>
                 <p className={`${isFour ? styles.isFourText : styles.text} ${styles.desktopText}`}>{service?.text}</p>
