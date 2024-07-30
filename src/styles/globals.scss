@@ -157,7 +157,13 @@ a {
     @media (max-width: 850px) {
         margin: 0px !important;
         padding: 0px !important;
-        ;
+    }
+}
+
+:where(.css-m4timi).ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+    @media (max-width: 850px) {
+        margin: 0px !important;
+        padding: 0px !important;
     }
 }
 
