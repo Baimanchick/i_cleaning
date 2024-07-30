@@ -170,7 +170,17 @@ a {
     }
 }
 
+:where(.css-m4timi).ant-tabs>.ant-tabs-nav .ant-tabs-nav-list,
+:where(.css-m4timi).ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-list {
+    @media (max-width: 850px) {
+        gap: 0px !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+    }
+}
+
 //FormBackground
+
 :where(.css-dev-only-do-not-override-m4timi).ant-modal .ant-modal-content {
     background-color: #2F2F2F !important;
 }
