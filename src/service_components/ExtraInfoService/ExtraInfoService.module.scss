@@ -38,6 +38,10 @@
     border-radius: 5px;
 }
 
+.paragraph_open_mobile {
+    display: none !important;
+}
+
 .hr {
     display: none;
 
@@ -111,7 +115,7 @@
 
     .image {
         width: 195px;
-        height: 150px;
+        height: 120px !important;
     }
 
     .imageContainer {
@@ -124,5 +128,21 @@
 
     .text {
         font-size: 12px;
+    }
+
+    .paragraph_open_mobile {
+        display: initial !important;
+    }
+
+    .paragraph_open {
+        display: none !important;
+    }
+
+    .paragraph {
+        display: none !important;
+    }
+
+    .btn_down {
+        display: none !important;
     }
 }

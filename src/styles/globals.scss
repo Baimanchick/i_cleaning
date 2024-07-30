@@ -128,22 +128,27 @@ a {
 }
 
 //DotsInCarouselServices
-:where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-dots-bottom {
+.slick-dots-bottom {
     bottom: -22px !important;
 }
 
-:where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-dots li {
+.slick-dots>.slick-active {
     background: rgba(179, 179, 179, 1) !important;
     width: 8px !important;
     height: 8px !important;
     border-radius: 16px !important;
 }
 
-:where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-dots li.slick-active button {
+.slick-dots>li {
     background: black !important;
     width: 8px !important;
     height: 8px !important;
     border-radius: 16px !important;
+}
+
+.slick-dots>li>button {
+    background: gray !important;
+    border-radius: 50% !important;
 }
 
 //TabsWidth

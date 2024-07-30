@@ -32,13 +32,14 @@ function ExtraInfoService({ service, style }: ExtraInfoServiceProps) {
                             </Flex>
                             <Flex gap={12} style={{ flexDirection: 'column' }}>
                                 <h2 className={styles.title}>{info.title}</h2>
+                                <p className={styles.paragraph_open_mobile}>{info.text}</p>
                                 {expanded ? (
                                     <p className={styles.paragraph_open}>{info.text}</p>
                                 ) : (
                                     <p className={styles.paragraph}>{info.text.slice(0, 350)}...</p>
                                 )}
                                 <button
-                                    className={`knowMoreButton`}
+                                    className={`knowMoreButton ${styles.btn_down}`}
                                     onClick={toggleExpansion}
                                     style={{ color: 'black', textAlign: 'left', }}
                                 >
