@@ -30,8 +30,6 @@
 
 .image {
     object-fit: cover;
-
-
 }
 
 .image_main {
@@ -52,6 +50,8 @@
     margin-bottom: 46px;
     max-width: 1920px !important;
     margin: 0 auto !important;
+    width: 100% !important;
+    justify-content: space-between !important;
 
     //UnderLine
     div>div:first-child::before {

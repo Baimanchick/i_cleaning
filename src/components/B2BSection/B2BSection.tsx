@@ -96,7 +96,7 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
             ) : (
                 <>
                     <div className={styles.tab_container}>
-                        <Flex style={{ width: '100%' }} className={styles.tabs_main} justify={'space-between'}>
+                        <Flex className={styles.tabs_main} >
                             <Tabs className={styles.Tabs} centered={true} items={customerMapped} onChange={onTabChange} />
                         </Flex>
                     </div>
