@@ -83,6 +83,22 @@
     }
 }
 
+.sliderVideo {
+    display: none !important;
+
+    @media (max-width: 670px) {
+        display: initial !important;
+    }
+}
+
+.videoComponent {
+    display: initial !important;
+
+    @media (max-width: 670px) {
+        display: none !important;
+    }
+}
+
 .FAQSection {
     margin-top: 111px;
 

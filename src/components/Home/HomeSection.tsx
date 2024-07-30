@@ -18,7 +18,6 @@ import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
 import { fetchServices } from '@/store/features/service/serviceSlice';
 import { fetchCustomer } from "@/store/features/customer/customerSlice";
 import { fetchVideo } from '@/store/features/video/videoSlice';
-import useWindowSize from '@/hooks/useWindowSize';
 import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 
 function HomeSection() {
@@ -27,8 +26,6 @@ function HomeSection() {
     const { service, loading: serviceLoading } = useAppSelector((state) => state.service);
     const { customer, loading: customerLoading } = useAppSelector((state) => state.customer);
     const { video, loading: videoLoading } = useAppSelector((state) => state.video);
-    const windowSize = useWindowSize();
-    const isMobile = windowSize.width && windowSize.width < 670;
 
     const mainRef = useRef(null);
     const serviceRef = useRef(null);
@@ -87,15 +84,14 @@ function HomeSection() {
                     <SolutionsList />
                 </div>
             </div>
-            {isMobile ? (
-                <div ref={videoRef} className={styles.video_series}>
-                    <SliderVideoSeries video={video} loading={videoLoading} />
-                </div>
-            ) : (
-                <div ref={videoRef} className={styles.video_series}>
-                    <VideoSeries video={video} loading={videoLoading} />
-                </div>
-            )}
+
+            <div ref={videoRef} className={`${styles.video_series} ${styles.sliderVideo}`}>
+                <SliderVideoSeries video={video} loading={videoLoading} />
+            </div>
+            <div ref={videoRef} className={`${styles.video_series} ${styles.videoComponent}`}>
+                <VideoSeries video={video} loading={videoLoading} />
+            </div>
+
             <div ref={faqRef} className={styles.FAQSection}>
                 <div className='container'>
                     <hr style={{ marginBottom: 10 }} className={styles.FAQhr} />
