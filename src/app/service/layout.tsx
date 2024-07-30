@@ -17,6 +17,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         <html lang="en">
             <Head>
                 <link rel="icon" href="/public/favicon.ico" sizes='any' />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <body suppressHydrationWarning={true}>
                 <StoreProvider>
