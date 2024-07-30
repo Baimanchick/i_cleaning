@@ -1,44 +1,52 @@
 .image_1 {
     width: 100%;
+    height: 504px !important;
+
 }
 
 .image_2 {
     width: 80%;
+    height: 244px !important;
+
 }
 
 .image_3 {
     width: 60%;
+    height: 244px !important;
+
 }
 
 .image_4 {
     width: 80%;
+    height: 244px !important;
+
 }
 
 .image_5 {
     width: 60%;
+    height: 244px !important;
+
 }
 
 .image {
     object-fit: cover;
-    height: 100%;
+
+
 }
 
 .image_main {
-    justify-content: space-between;
-    display: flex;
+    justify-content: space-between !important;
+    display: flex !important;
 }
 
 .image_container_second {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .title {
     font-size: 48px;
 }
-
-
-
 
 .tabs_main {
     margin-bottom: 46px;
@@ -80,7 +88,7 @@
 
 @media (max-width:1850px) {
     .image_1 {
-        width: 98%;
+        width: 98% !important;
     }
 }
 
@@ -124,7 +132,7 @@
     }
 
     .image_5 {
-        width: 190px;
+        width: 190px !important;
     }
 
     .image_main {
