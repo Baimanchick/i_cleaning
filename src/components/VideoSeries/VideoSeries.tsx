@@ -9,9 +9,9 @@ import telegram from "@/assets/svgs/b2b_section/telegram.svg";
 import whatsapp from "@/assets/svgs/b2b_section/whatsapp.svg";
 import { VideoType } from '@/helpers/interfaces/video.interface';
 import ModalApp from '@/service_components/ModalApp/ModalApp';
-import { SliderVideoSeriesProps } from '../SliderVideoSeries/SliderVideoSeries.props';
+import { VideoSeriesProps } from './VideoSeries.props';
 
-function SliderVideoSeries({ video, loading }: SliderVideoSeriesProps) {
+function SliderVideoSeries({ video, loading }: VideoSeriesProps) {
     const [activeKey, setActiveKey] = useState<string | null>(null);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
