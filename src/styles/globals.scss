@@ -178,6 +178,10 @@ a {
         gap: 0px !important;
         flex-wrap: wrap !important;
         justify-content: space-between !important;
+
+        div {
+            font-size: 12px !important;
+        }
     }
 }
 

@@ -12,7 +12,7 @@ function FAQSection() {
                 <h2 className={styles.main_title}>WHY CHOOSE ICLEANING?</h2>
             </Flex>
             <Flex className={styles.wrapper} align={'center'} justify={'space-between'}>
-                <Flex className={styles.wrapper_left} style={{ maxWidth: 717 }} align={'center'}>
+                <Flex className={styles.wrapper_left} style={{ maxWidth: 717 }} >
                     <img src={line.src} className={styles.line} alt="line" />
                     <Flex className={styles.text_container} style={{ flexDirection: 'column', height: '535px' }} justify={'space-between'}>
                         {faqText.map((item: any, index: number) => (

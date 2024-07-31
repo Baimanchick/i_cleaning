@@ -26,7 +26,6 @@
 
 .wrapper {
     width: 100% !important;
-    gap: 30px !important;
 }
 
 @media (max-width: 1630px) {
@@ -82,14 +81,20 @@
     }
 
     .main_title {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .containerTitle {
         margin-bottom: 10px;
+        justify-content: flex-start !important;
     }
 
     .mainImage {
         border-radius: 10px;
+    }
+
+    .wrapper_left {
+        align-items: flex-start !important;
+        gap: 15px !important;
     }
 }

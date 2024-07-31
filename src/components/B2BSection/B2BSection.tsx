@@ -124,8 +124,10 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                                             <img src={whatsapp.src} alt="whatsapp" />
                                         </Flex>
                                     </Flex>
-                                    <div className={styles.contact}>Contact info: +971508648401</div>
                                 </Flex>
+                            </Flex>
+                            <Flex style={{ marginTop: 15 }} justify={'end'}>
+                                <div className={styles.contact}>Contact info: +971508648401</div>
                             </Flex>
                         </Flex>
                     </div>
