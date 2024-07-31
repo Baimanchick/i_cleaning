@@ -13,13 +13,12 @@ import VideoSeries from "@/components/VideoSeries/VideoSeries";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import TrustSection from "@/components/TrustSection/TrustSection";
 import Footer from "@/components/Footer/Footer";
+import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 import styles from "./HomeSection.module.scss"
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
 import { fetchServices } from '@/store/features/service/serviceSlice';
 import { fetchCustomer } from "@/store/features/customer/customerSlice";
 import { fetchVideo } from '@/store/features/video/videoSlice';
-import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
-// import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 
 function HomeSection() {
     const dispatch = useAppDispatch();

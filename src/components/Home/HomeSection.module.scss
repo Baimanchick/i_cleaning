@@ -85,10 +85,6 @@
 
 .sliderVideo {
     display: none !important;
-
-    @media (max-width: 670px) {
-        display: initial !important;
-    }
 }
 
 .videoComponent {
