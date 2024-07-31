@@ -18,6 +18,7 @@ import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
 import { fetchServices } from '@/store/features/service/serviceSlice';
 import { fetchCustomer } from "@/store/features/customer/customerSlice";
 import { fetchVideo } from '@/store/features/video/videoSlice';
+import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 // import SliderVideoSeries from '../SliderVideoSeries/SliderVideoSeries';
 
 function HomeSection() {
@@ -85,9 +86,9 @@ function HomeSection() {
                 </div>
             </div>
 
-            {/* <div ref={videoRef} className={`${styles.video_series} ${styles.sliderVideo}`}>
+            <div ref={videoRef} className={`${styles.video_series} ${styles.sliderVideo}`}>
                 <SliderVideoSeries video={video} loading={videoLoading} />
-            </div> */}
+            </div>
             <div ref={videoRef} className={`${styles.video_series} ${styles.videoComponent}`}>
                 <VideoSeries video={video} loading={videoLoading} />
             </div>
