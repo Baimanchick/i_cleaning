@@ -77,7 +77,7 @@ function SliderVideoSeries({ video, loading }: SliderVideoSeriesProps) {
     return (
         <>
             <div className={styles.videoComponent}>
-                <div className='container'>
+                <div className={`container ${styles.container_video_series}`}>
                     <Flex className={styles.main_title_container} justify={'center'}>
                         <h2 className={styles.title}>VIDEO SERIES</h2>
                     </Flex>
