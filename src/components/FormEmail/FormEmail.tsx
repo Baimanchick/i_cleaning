@@ -9,6 +9,7 @@ import email from '@/assets/svgs/form/email.svg';
 import $axios from '@/utils/axios';
 import { FormState } from '@/helpers/interfaces/form.interface';
 import { API_URL } from '@/utils/const';
+import Image from 'next/image';
 
 const formItemLayout = {
     labelCol: {
@@ -102,7 +103,7 @@ function FormEmail() {
 
                 <Form.Item className={styles.FormSubmit} wrapperCol={{ offset: 6, span: 16 }}>
                     <Button
-                        icon={<img className={styles.icon} src={email.src} alt='email icon' />}
+                        icon={<Image width={28} height={28} className={styles.icon} src={email.src} alt='email icon' />}
                         className={styles.btn}
                         appearance='blue'
                         htmlType='submit'

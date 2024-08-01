@@ -1,7 +1,6 @@
 import { Flex } from 'antd'
 import React from 'react'
 import styles from "./SectionTarget.module.scss"
-import { Button } from '../Button/Button'
 import ageImg from "@/assets/svgs/age/age.svg"
 import ageImgSmall from "@/assets/svgs/age/small_age.svg"
 

@@ -3,7 +3,7 @@ import styles from "./FAQSection.module.scss"
 import line from "@/assets/svgs/faq/line.svg"
 import { Flex } from 'antd'
 import { faqText } from '@/helpers/data/faqText'
-
+import Image from 'next/image'
 
 function FAQSection() {
     return (
@@ -11,9 +11,9 @@ function FAQSection() {
             <Flex className={styles.containerTitle} justify={'center'}>
                 <h2 className={styles.main_title}>WHY CHOOSE ICLEANING?</h2>
             </Flex>
-            <Flex className={styles.wrapper} align={'center'} justify={'space-between'}>
+            <Flex className={styles.wrapper} align={'center'} gap={30} justify={'space-between'}>
                 <Flex className={styles.wrapper_left} style={{ maxWidth: 717 }} >
-                    <img src={line.src} className={styles.line} alt="line" />
+                    <Image width={100} height={100} src={line.src} className={styles.line} alt="line" />
                     <Flex className={styles.text_container} style={{ flexDirection: 'column', height: '535px' }} justify={'space-between'}>
                         {faqText.map((item: any, index: number) => (
                             <div key={index} className={styles.text}>
@@ -24,7 +24,8 @@ function FAQSection() {
                     </Flex>
                 </Flex>
                 <Flex className={styles.wrapper_right}>
-                    <img className={styles.mainImage} src="https://i.imgur.com/zutk9Ps.png" alt="team" />
+                    {/* <img className={styles.mainImage} src="https://i.imgur.com/zutk9Ps.png" alt="team" /> */}
+                    <div></div>
                 </Flex>
             </Flex>
         </div>

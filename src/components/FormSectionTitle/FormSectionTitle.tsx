@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./FormSectionTitle.module.scss"
 import { Flex } from 'antd'
 import ageImg from "@/assets/svgs/age/age.svg"
+import Image from 'next/image'
 
 function FormSectionTitle() {
     return (
@@ -16,7 +17,7 @@ function FormSectionTitle() {
                 </p>
             </Flex>
             <Flex className={styles.ageContainer} style={{ flexDirection: 'column' }} gap={14} >
-                <img className={styles.ageImg} src={ageImg.src} />
+                <Image alt='8+' width={158} height={144} className={styles.ageImg} src={ageImg.src} />
                 <p className={styles.paragraph_age}>Years work experience in UAE</p>
             </Flex>
         </Flex>

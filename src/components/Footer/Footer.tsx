@@ -8,6 +8,7 @@ import whatsapp from "@/assets/svgs/footer/whatsapp.svg"
 import geo from "@/assets/svgs/footer/geo.svg"
 import { Flex } from 'antd'
 import { MailFilled, PhoneFilled } from '@ant-design/icons'
+import Image from 'next/image'
 
 function Footer() {
     const handleRedirect = (url: string) => {
@@ -39,7 +40,7 @@ function Footer() {
                                 </p>
                             </Flex>
                             <Flex align={'center'} style={{ cursor: 'pointer' }} gap={4}>
-                                <img src={geo.src} className={styles.geo} alt="geo" />
+                                <Image width={18} height={18} src={geo.src} className={styles.geo} alt="geo" />
                                 <p className={styles.text}>
                                     <a
                                         href="https://www.google.com/maps/search/Store+%2310,+Jebel+Ali+Industrial+Area+-+Dubai+-+UAE/@24.9959178,55.0422448,12.87z?entry=ttu"
@@ -55,19 +56,19 @@ function Footer() {
                         <Flex ><h2 className={styles.title}>Social media</h2></Flex>
                         <Flex className={styles.utils} style={{ flexDirection: 'column', }} gap={10}>
                             <Flex onClick={() => handleRedirect('https://t.me/icleaning_dubai')} align={'center'} style={{ cursor: 'pointer' }} gap={8} >
-                                <img className={styles.utilsIcon} src={telegram.src} alt="icon" />
+                                <Image width={30} height={30} className={styles.utilsIcon} src={telegram.src} alt="icon" />
                                 <p className={styles.text}>
                                     Telegram
                                 </p>
                             </Flex>
                             <Flex onClick={() => handleRedirect('https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
-                                <img className={styles.utilsIcon} src={whatsapp.src} alt="icon" />
+                                <Image width={30} height={30} className={styles.utilsIcon} src={whatsapp.src} alt="icon" />
                                 <p className={styles.text}>
                                     Whatsapp
                                 </p>
                             </Flex>
                             <Flex onClick={() => handleRedirect('https://www.instagram.com/icleaning_dubai/')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
-                                <img className={styles.utilsIcon} src={instagram.src} alt="icon" />
+                                <Image width={30} height={30} className={styles.utilsIcon} src={instagram.src} alt="icon" />
                                 <p className={styles.text}>
                                     Instagram
                                 </p>

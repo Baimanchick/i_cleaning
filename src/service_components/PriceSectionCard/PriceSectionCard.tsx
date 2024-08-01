@@ -3,6 +3,7 @@ import styles from './PriceSectionCard.module.scss';
 import { PriceSectionCardProps } from './PriceSectionCard.props';
 import { Flex } from 'antd';
 import { Button } from '@/components/Button/Button';
+import Image from 'next/image';
 
 function PriceSectionCard({ card }: PriceSectionCardProps) {
     const renderExtraInfo = (extraInfo: any) => {
@@ -34,7 +35,7 @@ function PriceSectionCard({ card }: PriceSectionCardProps) {
                             Add +
                         </Button>
                     </div>
-                    <img className={styles.img} src={card.image} alt={card.title} />
+                    <Image width={100} height={100} className={styles.img} src={card.image} alt={card.title} />
                 </Flex>
             </div>
         ) : card.is_discount ? (
@@ -60,7 +61,7 @@ function PriceSectionCard({ card }: PriceSectionCardProps) {
                             Add +
                         </Button>
                     </div>
-                    <img className={styles.img} src={card.image} alt={card.title} />
+                    <Image width={100} height={100} className={styles.img} src={card.image} alt={card.title} />
                 </Flex>
             </div>
         ) : card.is_house ? (
@@ -77,7 +78,7 @@ function PriceSectionCard({ card }: PriceSectionCardProps) {
                             Add +
                         </Button>
                     </div>
-                    <img className={styles.img} src={card.image} alt={card.title} />
+                    <Image width={100} height={100} className={styles.img} src={card.image} alt={card.title} />
                 </Flex>
             </div>
         ) : null

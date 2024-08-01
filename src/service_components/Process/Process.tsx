@@ -14,7 +14,7 @@ function Process({ service }: ProcessProps) {
                     </div>
                     <Flex className={styles.process} style={{ flexDirection: 'column' }}>
                         <div className={styles.image_container}>
-                            <img src={item.image} alt={item.title} />
+                            <img src={item.image} alt={`item.title`} />
                         </div>
                         <Flex className={styles.title_main} style={{ width: '100%' }} justify={'space-between'}>
                             <Flex style={{ flexDirection: 'column' }}>

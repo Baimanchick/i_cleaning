@@ -3,6 +3,7 @@ import styles from "./ExtraInfoService.module.scss"
 import { ExtraInfoServiceProps } from './ExtraInfoService.props'
 import { Video } from '@/helpers/interfaces/service.interface'
 import { Flex } from 'antd'
+import Image from 'next/image'
 
 function ExtraInfoService({ service, style }: ExtraInfoServiceProps) {
     const [expanded, setExpanded] = useState(false);
@@ -27,8 +28,20 @@ function ExtraInfoService({ service, style }: ExtraInfoServiceProps) {
                         </Flex>
                         <Flex className={styles.wrapper_right}>
                             <Flex className={styles.imageContainer} gap={2}>
-                                <img className={styles.image} src={info.image} alt={info.title} />
-                                <img className={styles.image} src={info.image2} alt={info.title} />
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    className={styles.image}
+                                    src={info.image || '/path/to/default/image.jpg'}
+                                    alt={info.title || 'Default Alt Text'}
+                                />
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    className={styles.image}
+                                    src={info.image2 || '/path/to/default/image.jpg'}
+                                    alt={info.title || 'Default Alt Text'}
+                                />
                             </Flex>
                             <Flex gap={12} style={{ flexDirection: 'column' }}>
                                 <h2 className={styles.title}>{info.title}</h2>
@@ -51,9 +64,8 @@ function ExtraInfoService({ service, style }: ExtraInfoServiceProps) {
                 </div>
                 <hr className={styles.hr} />
             </div>
-        )
-        )
+        ))
     )
 }
 
-export default ExtraInfoService
+export default ExtraInfoService;

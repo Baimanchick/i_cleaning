@@ -48,10 +48,12 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
             <Flex className={styles.image_main}>
                 <Flex className={styles.image_container_first}>
                     {customer.images.slice(0, 1).map((image: any, index) => (
-                        <img
+                        <Image
                             key={index}
                             src={image.image}
                             alt={`image-${index}`}
+                            width={100}
+                            height={100}
                             className={`${styles.image} ${getClassByIndex(index, styles)}`}
                         />
                     ))}
@@ -59,8 +61,10 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                 <Flex gap={16} className={styles.image_container_second}>
                     <Flex className={styles.justify} gap={16}>
                         {customer.images.slice(1, 3).map((image: any, index) => (
-                            <img
+                            <Image
                                 key={index + 1}
+                                width={100}
+                                height={100}
                                 src={image.image}
                                 alt={`image-${index + 1}`}
                                 className={`${styles.image} ${getClassByIndex(index + 1, styles)}`}
@@ -69,7 +73,9 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                     </Flex>
                     <Flex className={styles.justify} gap={16}>
                         {customer.images.slice(3, 5).map((image: any, index) => (
-                            <img
+                            <Image
+                                width={100}
+                                height={100}
                                 key={index + 3}
                                 src={image.image}
                                 alt={`image-${index + 3}`}
@@ -115,13 +121,13 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                                 <Flex gap={20} style={{ flexDirection: 'column' }}>
                                     <Flex justify={'flex-end'} gap={12}>
                                         <Flex onClick={() => handleRedirect('https://www.instagram.com/icleaning_dubai/')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
-                                            <img src={instagram.src} alt="instagram" />
+                                            <Image width={40} height={40} src={instagram.src} alt="instagram" />
                                         </Flex>
                                         <Flex onClick={() => handleRedirect('https://t.me/icleaning_dubai')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
-                                            <img src={telegram.src} alt="telegram" />
+                                            <Image width={40} height={40} src={telegram.src} alt="telegram" />
                                         </Flex>
                                         <Flex onClick={() => handleRedirect('https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0')} align={'center'} style={{ cursor: 'pointer' }} gap={8}>
-                                            <img src={whatsapp.src} alt="whatsapp" />
+                                            <Image width={40} height={40} src={whatsapp.src} alt="whatsapp" />
                                         </Flex>
                                     </Flex>
                                 </Flex>
