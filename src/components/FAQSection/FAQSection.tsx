@@ -24,8 +24,7 @@ function FAQSection() {
                     </Flex>
                 </Flex>
                 <Flex className={styles.wrapper_right}>
-                    {/* <img className={styles.mainImage} src="https://i.imgur.com/zutk9Ps.png" alt="team" /> */}
-                    <div></div>
+                    <img className={styles.mainImage} src="https://i.imgur.com/zutk9Ps.png" alt="team" />
                 </Flex>
             </Flex>
         </div>
