@@ -52,8 +52,8 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                             key={index}
                             src={image.image}
                             alt={`image-${index}`}
-                            width={100}
-                            height={100}
+                            width={400}
+                            height={400}
                             className={`${styles.image} ${getClassByIndex(index, styles)}`}
                         />
                     ))}
@@ -63,8 +63,8 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                         {customer.images.slice(1, 3).map((image: any, index) => (
                             <Image
                                 key={index + 1}
-                                width={100}
-                                height={100}
+                                width={400}
+                                height={400}
                                 src={image.image}
                                 alt={`image-${index + 1}`}
                                 className={`${styles.image} ${getClassByIndex(index + 1, styles)}`}
@@ -74,8 +74,8 @@ function B2BSection({ customer, loading }: B2BSectionProps) {
                     <Flex className={styles.justify} gap={16}>
                         {customer.images.slice(3, 5).map((image: any, index) => (
                             <Image
-                                width={100}
-                                height={100}
+                                width={400}
+                                height={400}
                                 key={index + 3}
                                 src={image.image}
                                 alt={`image-${index + 3}`}
