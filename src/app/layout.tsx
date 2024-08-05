@@ -3,7 +3,6 @@ import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import '@/styles/globals.scss'
 import { StoreProvider } from '@/store/StoreProvider';
 import Head from 'next/head';
-import Widjet from '@/components/Widjet/Widjet';
 
 export const metadata = {
   title: 'I-Cleaning',
@@ -21,7 +20,6 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
       <StoreProvider>
         <StyledComponentsRegistry>
           {children}
-          <Widjet />
         </StyledComponentsRegistry>
       </StoreProvider>
     </body>

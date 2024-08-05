@@ -32,7 +32,6 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
                         {children}
                         <Footer />
                         <Widjet />
-
                     </StyledComponentsRegistry>
                 </StoreProvider>
             </body>

@@ -19,6 +19,7 @@ import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
 import { fetchServices } from '@/store/features/service/serviceSlice';
 import { fetchCustomer } from "@/store/features/customer/customerSlice";
 import { fetchVideo } from '@/store/features/video/videoSlice';
+import Widjet from '../Widjet/Widjet';
 
 function HomeSection() {
     const dispatch = useAppDispatch();
@@ -107,6 +108,8 @@ function HomeSection() {
             <div ref={footerRef}>
                 <Footer />
             </div>
+            <Widjet />
+
         </div>
     )
 }

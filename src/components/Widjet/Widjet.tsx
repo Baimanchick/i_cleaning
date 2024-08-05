@@ -4,7 +4,7 @@ import React from 'react';
 import styles from "./Widjet.module.scss"
 import what from "@/assets/svgs/widjet/32px-WhatsApp.svg.png"
 
-const Widjet: React.FC = () => {
+function Widjet() {
     const handleClick = () => {
         window.open('https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0', '_blank');
     };
@@ -14,6 +14,6 @@ const Widjet: React.FC = () => {
             <img src={what.src} alt="WhatsApp" />
         </div>
     );
-};
+}
 
-export default Widjet;
+export default Widjet
