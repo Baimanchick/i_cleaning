@@ -1,0 +1,21 @@
+.whatsapp_widget {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #128C7E;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -32,6 +32,7 @@
 body {
     background-color: rgba(245, 249, 252, 1);
     overflow-x: hidden;
+    position: relative;
 }
 
 * {
@@ -200,6 +201,14 @@ a {
     background-color: #2F2F2F !important;
 }
 
+:where(.css-dev-only-do-not-override-m4timi).ant-modal-root .ant-modal-centered .ant-modal {
+    background-color: #2F2F2F !important;
+}
+
+.ant-modal-content {
+    background-color: #2f2f2f !important;
+}
+
 //SvgColor
 :where(.css-dev-only-do-not-override-m4timi)[class^="ant-modal"] [class^="ant-modal"],
 :where(.css-dev-only-do-not-override-m4timi)[class*=" ant-modal"] [class^="ant-modal"],
@@ -208,4 +217,10 @@ a {
     svg {
         color: #fff !important;
     }
+}
+
+
+// InputSearch
+.ant-input-group-addon {
+    display: none !important;
 }

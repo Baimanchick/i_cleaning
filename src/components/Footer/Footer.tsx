@@ -43,7 +43,7 @@ function Footer() {
                                 <Image width={18} height={18} src={geo.src} className={styles.geo} alt="geo" />
                                 <p className={styles.text}>
                                     <a
-                                        href="https://www.google.com/maps/search/Store+%2310,+Jebel+Ali+Industrial+Area+-+Dubai+-+UAE/@24.9959178,55.0422448,12.87z?entry=ttu"
+                                        href="https://www.google.com/maps/place/iCleaning/@24.9956832,55.0997246,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f13b2bf579a2d:0x9301ee88c16524e5!8m2!3d24.9956784!4d55.1022995!16s%2Fg%2F11kqwm44tl?entry=tts&g_ep=EgoyMDI0MDczMS4wKgBIAVAD"
                                         target='_blank'
                                     >
                                         Store #10, Jebel Ali Industrial Area - Dubai - UAE

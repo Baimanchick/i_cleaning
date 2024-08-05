@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import SearchInput from '@/components/SearchInput/SearchInput';
 import Footer from '@/components/Footer/Footer';
 import Head from 'next/head';
+import Widjet from '@/components/Widjet/Widjet';
 
 export const metadata = {
     title: 'I-Cleaning Service',
@@ -21,15 +22,17 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
             </Head>
             <body suppressHydrationWarning={true}>
                 <StoreProvider>
-                    <div className="container">
-                        <Navbar isHomePage={false} />
-                    </div>
                     <StyledComponentsRegistry>
+                        <div className="container">
+                            <Navbar isHomePage={false} />
+                        </div>
                         <div className={'search_container'}>
                             <SearchInput />
                         </div>
                         {children}
                         <Footer />
+                        <Widjet />
+
                     </StyledComponentsRegistry>
                 </StoreProvider>
             </body>

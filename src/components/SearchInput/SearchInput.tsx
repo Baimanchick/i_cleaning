@@ -1,35 +1,86 @@
 'use client'
 
-import React, { useState } from 'react';
-import { AutoComplete } from 'antd';
-import styles from "./SearchInput.module.scss"
-
-const mockVal = (str: string, repeat = 1) => ({
-    value: str.repeat(repeat),
-});
+import { AutoComplete, Input, SelectProps } from "antd";
+import styles from "./SearchInput.module.scss";
+import { useState } from "react";
+import { useAppDispatch } from "../../hooks/hooks";
+import { searchService } from "@/store/features/service/serviceSlice";
+import { useRouter } from "next/navigation";
+import { ServiceType } from "@/helpers/interfaces/service.interface";
 
 function SearchInput() {
-    const [options, setOptions] = useState<{ value: string }[]>([]);
+    const [options, setOptions] = useState<SelectProps<object>["options"]>([]);
+    const dispatch = useAppDispatch();
+    const navigate = useRouter();
+    const [searchValue, setSearchValue] = useState<string>("");
 
-    const getPanelValue = (searchText: string) =>
-        !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)];
+    const handleSearchAntd = async (value: string) => {
+        console.log("handleSearchAntd called with value:", value);
+        setSearchValue(value);
+        if (value.trim() !== "") {
+            const resultAction = await dispatch(searchService(value.trim()));
+            if (searchService.fulfilled.match(resultAction)) {
+                const searchResults = resultAction.payload as unknown as ServiceType[];
+                if (Array.isArray(searchResults)) {
+                    console.log("Search results:", searchResults);
+                    setOptions(
+                        searchResults.map((service) => ({
+                            value: `${service.title_for_image} ${service.title_for_image2}`,
+                            label: (
+                                <div
+                                    key={service.id}
+                                    style={{ display: "flex", justifyContent: "space-between" }}
+                                    onClick={() => navigate.push(`/service/${service.id}`)}
+                                >
+                                    <span style={{ cursor: "pointer" }}>
+                                        {service.title_for_image} {service.title_for_image2}
+                                    </span>
+                                </div>
+                            ),
+                        }))
+                    );
+                } else {
+                    console.log("Search results is not an array:", searchResults);
+                    setOptions([]);
+                }
+            } else {
+                console.log("Search service rejected:", resultAction);
+                setOptions([]);
+            }
+        } else {
+            setOptions([]);
+        }
+    };
 
-    const onSelect = (data: string) => {
-        console.log('onSelect', data);
+    const onSelect = (value: string) => {
+        setSearchValue("");
+        // console.log(value);
+    };
+
+    const handleStopClose = (event: React.MouseEvent<HTMLInputElement>) => {
+        event.stopPropagation();
     };
 
     return (
-        <>
+        <div className={styles.modalBackground}>
             <AutoComplete
+                popupMatchSelectWidth={325}
                 options={options}
-                style={{ width: 200 }}
+                style={{ marginBottom: 15 }}
+                size="large"
                 onSelect={onSelect}
-                onSearch={(text) => setOptions(getPanelValue(text))}
-                placeholder="Search"
-                className={styles.AutoComplete}
-            />
-        </>
+                onSearch={handleSearchAntd}
+                onClick={handleStopClose}
+                value={searchValue}
+            >
+                <Input.Search
+                    className={styles.AutoComplete}
+                    placeholder="Search..."
+                    enterButton
+                />
+            </AutoComplete>
+        </div>
     );
-};
+}
 
 export default SearchInput;

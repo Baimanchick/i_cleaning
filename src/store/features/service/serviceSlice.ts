@@ -72,5 +72,33 @@ export const fetchOneService = createAsyncThunk<
   }
 });
 
+export const searchService = createAsyncThunk<
+  ServiceState,
+  any,
+  { rejectValue: unknown }
+>(
+  "service/searchService",
+  async (search_filters, { dispatch, rejectWithValue }) => {
+    try {
+      const { data } = await $axios.get(`${API_URL}/search/`, {
+        params: {
+          query: search_filters,
+        },
+      });
+      console.log(data);
+
+      dispatch(serviceSlice.actions.setService(data));
+      return data;
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        return rejectWithValue(
+          error.response?.data?.message || "Failed to fetch searchProducts"
+        );
+      }
+      throw error;
+    }
+  }
+);
+
 export const { setService } = serviceSlice.actions;
 export default serviceSlice.reducer;
