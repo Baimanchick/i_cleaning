@@ -29,15 +29,15 @@ function ExtraInfoService({ service, style }: ExtraInfoServiceProps) {
                         <Flex className={styles.wrapper_right}>
                             <Flex className={styles.imageContainer} gap={2}>
                                 <Image
-                                    width={100}
-                                    height={100}
+                                    width={400}
+                                    height={220}
                                     className={styles.image}
                                     src={info.image || '/path/to/default/image.jpg'}
                                     alt={info.title || 'Default Alt Text'}
                                 />
                                 <Image
-                                    width={100}
-                                    height={100}
+                                    width={400}
+                                    height={220}
                                     className={styles.image}
                                     src={info.image2 || '/path/to/default/image.jpg'}
                                     alt={info.title || 'Default Alt Text'}

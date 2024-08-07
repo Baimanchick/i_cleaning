@@ -35,7 +35,7 @@ function PriceSectionCard({ card }: PriceSectionCardProps) {
                             Add +
                         </Button>
                     </div>
-                    <Image width={100} height={100} className={styles.img} src={card.image} alt={card.title} />
+                    <Image width={470} height={200} className={styles.img} src={card.image} alt={card.title} />
                 </Flex>
             </div>
         ) : card.is_discount ? (
@@ -61,7 +61,7 @@ function PriceSectionCard({ card }: PriceSectionCardProps) {
                             Add +
                         </Button>
                     </div>
-                    <Image width={100} height={100} className={styles.img} src={card.image} alt={card.title} />
+                    <Image width={470} height={200} className={styles.img} src={card.image} alt={card.title} />
                 </Flex>
             </div>
         ) : card.is_house ? (
@@ -78,7 +78,7 @@ function PriceSectionCard({ card }: PriceSectionCardProps) {
                             Add +
                         </Button>
                     </div>
-                    <Image width={100} height={100} className={styles.img} src={card.image} alt={card.title} />
+                    <Image width={470} height={200} className={styles.img} src={card.image} alt={card.title} />
                 </Flex>
             </div>
         ) : null
