@@ -101,9 +101,15 @@ function Cart() {
     const serviceKeys: (keyof Services)[] = ['carpet', 'matresses', 'sofas', 'curtainsAndBlinds', 'generalCleaning', 'deepCleaning', 'AirConditionerClening']
 
     return (
-        <Flex className={styles.main} style={{ flexDirection: 'column', rowGap: 50 }}>
+        <Flex className={styles.main} style={{ flexDirection: 'column', rowGap: '20px' }}>
             {serviceKeys.map(service => (
-                <Flex key={service} align={'center'} justify={'space-between'} className={styles.container}>
+                <Flex
+                    key={service}
+                    align={'center'}
+                    justify={'space-between'}
+                    className={styles.container}
+                    style={{ padding: '20px', borderBottom: '1px solid #ccc' }}
+                >
                     <div className={styles.title}>
                         {service.replace(/([A-Z])/g, ' $1').toUpperCase().trim()}
                     </div>
@@ -112,10 +118,14 @@ function Cart() {
                         value={selectedOptions[service]}
                         buttonStyle="solid"
                         onChange={(e) => handleOptionChange(service, e.target.value)}
-                        style={{ flexWrap: 'wrap' }}
+                        style={{ flexWrap: 'wrap', gap: '10px', flex: '1' }}
                     >
                         {services[service].options.map(option => (
-                            <Radio.Button key={option.value} className={styles.radio_button} value={option.value}>
+                            <Radio.Button
+                                key={option.value}
+                                className={styles.radio_button}
+                                value={option.value}
+                            >
                                 {option.label}
                             </Radio.Button>
                         ))}
@@ -128,13 +138,14 @@ function Cart() {
                     </div>
                 </Flex>
             ))}
-            <Flex align={'flex-end'} style={{ flexDirection: "column" }} className={styles.continue_container}>
+            <Flex align={'flex-end'} style={{ flexDirection: "column", marginTop: '20px' }} className={styles.continue_container}>
                 <Flex className={styles.total}>
                     <div>Total price: AED {calculateTotalPrice()}</div>
                 </Flex>
-                <Button className={`${styles.btn} ${styles.btn_countinue}`} appearance='blue'>COUNTINUE</Button>
+                <Button className={`${styles.btn} ${styles.btn_countinue}`} appearance='blue'>CONTINUE</Button>
             </Flex>
         </Flex>
+
     )
 }
 

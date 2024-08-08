@@ -24,7 +24,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
                             <Navbar />
                         </div>
                         {children}
-                        {/* <Footer /> */}
+                        <Footer />
                     </StyledComponentsRegistry>
                 </StoreProvider>
             </body>
