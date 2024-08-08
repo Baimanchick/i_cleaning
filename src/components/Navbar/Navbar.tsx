@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useMemo, useState } from 'react'
-import { DrawerProps, Flex } from 'antd'
+import { Badge, DrawerProps, Flex } from 'antd'
 import styles from "./Navbar.module.scss"
 import logo from "@/assets/svgs/navbar/logo_i.svg";
 import mobile_logo from "@/assets/svgs/navbar/mobile_icon.svg";
@@ -11,6 +11,7 @@ import BurgerMenu from '@/components/BurgerMenu/BurgerMenu'
 import { MenuItem, NavbarProps } from './Navbar.props';
 import SearchInput from '../SearchInput/SearchInput';
 import { useRouter } from 'next/navigation';
+import cart from "@/assets/svgs/cart/cart.svg"
 
 function Navbar({ refs, isHomePage }: NavbarProps) {
     const navigate = useRouter();
@@ -45,7 +46,7 @@ function Navbar({ refs, isHomePage }: NavbarProps) {
     };
 
     return (
-        <Flex className={styles.navbar} justify={'space-between'} style={{ marginTop: 30 }}>
+        <Flex className={styles.navbar} align={'center'} justify={'space-between'} style={{ marginTop: 30 }}>
             <Flex>
                 <img onClick={() => navigate.push('/')} className={styles.logo_mobile} src={mobile_logo.src} alt="logo" />
                 <img onClick={() => navigate.push('/')} className={styles.logo} src={logo.src} alt="logo" />
@@ -60,6 +61,20 @@ function Navbar({ refs, isHomePage }: NavbarProps) {
                 <Flex style={{ cursor: 'pointer' }} gap={8} align={'center'}>
                     <h2 className={styles.lang}>EN</h2>
                     <img className={styles.en} src={english.src} />
+                </Flex>
+                <Flex>
+                    <Badge
+                        // count={cartItems.length} 
+                        color={"#FABC22"}>
+                        <img
+                            src={cart.src}
+                            onClick={() => {
+                                navigate.push("/cart");
+                            }}
+                            className={styles.icon__item}
+                            alt="Корзина"
+                        />
+                    </Badge>
                 </Flex>
                 <Flex>
                     <img onClick={showDrawer} className={styles.burger} src={burger.src} alt="burger" />
